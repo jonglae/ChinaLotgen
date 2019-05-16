@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="4dp"
+        android:background="#F2006354"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.2"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/ballbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ballimage1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball1" />
+
+            <ImageView
+                android:id="@+id/ballimage2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball2" />
+
+            <ImageView
+                android:id="@+id/ballimage3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball3" />
+
+            <ImageView
+                android:id="@+id/ballimage4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball4" />
+
+            <ImageView
+                android:id="@+id/ballimage5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball5" />
+
+            <ImageView
+                android:id="@+id/ballimage6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            tools:ignore="DuplicateIds">
+
+            <TextView
+                android:id="@+id/balltext1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balltext2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balltext3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balltext4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balltext5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balltext6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text10"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="2dp"
+        android:autoLink="web"
+        android:background="@color/timestamp"
+        android:gravity="center_vertical"
+        android:text="@string/main_mdct"
+        android:textAlignment="center"
+        android:textColor="#FF8F00"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="전체/평균"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_tedadmob_primary"
+            android:text="단타/연타"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

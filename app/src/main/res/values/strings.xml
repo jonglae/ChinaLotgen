@@ -1,27 +1,28 @@
 <resources>
-    <string name="app_name">로또 번호 발생기</string>
+    <string name="app_name">中国乐透</string>
     <string name="action_settings">Settings</string>
 
-    <string name="info_net2">!인터넷 통신 문제가 있습니다!</string>
-    <string name="info_net3">WiFi 또는 모바일 네트웍을 확인해주세요!!</string>
-    <string name="info_net4">로또번호 확인 위해 네트웍을 활성화 해주세요!</string>
-    <string name="info_net1">!통신 문제 발생!</string>
+    <string name="info_net1">!发生了沟通问题!</string>
+    <string name="info_net2">!我的网络通讯有问题!</string>
+    <string name="info_net3">检查您的WiFi或移动网络!!</string>
+    <string name="info_net4">请激活您的网络以验证您的彩票号码。!</string>
 
-    <string name="btn_gen">로또번호 생성버튼(Click)</string>
-    <string name="btn_copy">복사</string>
-    <string name="btn_exit">종료</string>
-    <string name="btn_share">공유</string>
-    <string name="btn_save">저장</string>
-    <string name="btn_list">리스트</string>
-    <string name="Main_text">생성 버튼을 눌러 주세요</string>
+    <string name="btn_gen">点击按钮(Click)</string>
+    <string name="btn_copy">复制</string>
+    <string name="btn_exit">出口</string>
+    <string name="btn_share">分享</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_list">名单</string>
+    <string name="Main_text">单击“创建”按钮</string>
     <string name="main_mdct">MDCT</string>
-    <string name="lstbtn1">당첨확인</string>
+    <string name="lstbtn1">确认投票</string>
     <string name="scr_Plus">+</string>
-
-    <string name="scr_text1">❤ 행운의 번호는 ❤</string>
-    <string name="scr_text2">❤ 대박 나세요 ❤</string>
-    <string name="Popup_Mesg1">대박나세요~ 죵료 하시겠습니까?</string>
-    <string name="Popup_Mesg2">길게 누루면 번호 삭제 할 수 있습니다.</string>
+    <string name="scr_text1">❤ 好运的数量 ❤</string>
+    <string name="scr_text2">❤ 恭喜发财！❤</string>
+    <string name="sw1_text1">总体/平均</string>
+    <string name="sw2_text2">单击/自动点击</string>
+    <string name="Popup_Mesg1">恭喜发财~ 你想要退出吗？</string>
+    <string name="Popup_Mesg2">您可以通过按住来删除该号码.</string>
 
 
     <string name="banner_ad_unit_id">ca-app-pub-5187489598351901/4438118635</string>
@@ -34,10 +35,10 @@
     <string name="mdct_links">http://gotopark.blogspot.kr/</string>
 
 
-    <string name="app_share">★#행운 #로또번호★\n</string>
-    <string name="app_Das">꿈은 이루어 진다.</string>
-    <string name="info_Mess">대박 나세요 ★꿈은 이루어 진다★</string>
-    <string name="JsoupOne">"https://kr.lottolyzer.com/home/south-korea/6_slash_45-lotto"</string>
+    <string name="app_share">★#好运 #双色球★\n</string>
+    <string name="app_Das">梦想成真.</string>
+    <string name="info_Mess">恭喜发财 ★梦想成真★</string>
+    <string name="JsoupOne">"http://www.cwl.gov.cn/kjxx/ssq/"</string>
 
 
     //QR Code 카메라 관련
@@ -50,37 +51,43 @@
     <string name="select_camera">Select a Camera</string>
     <string name="ok_button">OK</string>
     <string name="cancel_button">Cancel</string>
-    <string name="scan_Meg1">녹색 박스를 로또 QR-Code 맞춰주세요 \n 그렇게 가까이 안되도 됩니다.</string>
-    <string name="scan_Meg2">당첨 축하 드립니다.</string>
+    <string name="scan_Meg1">请将绿色框设置为QR码 \n 你不能这么近。</string>
+    <string name="scan_Meg2">祝贺获胜。</string>
 
     <bool name="cameraPreviewShouldFillView">true</bool>
 
+    //회차
+    <string name="jsoup_q1">.kjrq</string>
+    //로또번호
+    <string name="jsoup_q2">.hmj</string>
+    //보너스 번호
+    <string name="jsoup_q3">.qiuL</string>
+    //당첨이력
+    <string name="jsoup_q4">.bqxq td</string>
 
-    <string name="jsoup_q1">#latest_draw</string>
-    <string name="jsoup_q2">#latest_date</string>
-    <string name="jsoup_q3">#latest_numbers .ball</string>
-    <string name="jsoup_q4">#latest_divisions .divisions</string>
-    <string name="jsoup_q5">.upcoming .info</string>
-    <string name="jsoup_q6">.upcoming .prize-data</string>
+    //本期销售额： 현재 판매액 :
+    <string name="jsoup_q5">.xqzy .xse</string>
+    // 下期一等奖奖池累计金额： 다음 상금 1 등상
+    <string name="jsoup_q6">.xqzy .jchi</string>
 
 
     //network Error Message
-    <string name="net_Info1">네트웍 Error!</string>
-    <string name="net_Info2">Wifi 또는 모바일 네트웍을 켜주세요</string>
-    <string name="net_Info3">인터넷이 필요합니다.!!!</string>
-    <string name="net_Info4">앱을 다시 시작 해주시면 당첨번호를 확인할 수 있습니다.</string>
-    <string name="twiter_CH">#유머 #lotto #로또 #당첨 #추천번호 @data114</string>
+    <string name="net_Info1">Network Error!</string>
+    <string name="net_Info2">Please Turn ON Wifi or Mobile</string>
+    <string name="net_Info3">Need Network</string>
+    <string name="net_Info4">您可以通过重新启动应用程序来查看中奖号码。</string>
+    <string name="twiter_CH">#幽默 #lotto #乐透 #韩元 #参考编号 @data114</string>
 
-    <string name="scr_EXIT_Mesg1">나가시겠습니까 ?</string>
-    <string name="scr_EXIT_Mesg2">광고 보고 나가기</string>
-    <string name="scr_EXIT_Mesg3">나가기</string>
-    <string name="select_list">리스트를 길게 클릭 하면 지울 수 있습니다.</string>
+    <string name="scr_EXIT_Mesg1">你想要退出吗？ ?</string>
+    <string name="scr_EXIT_Mesg2">EXIT后显示AD</string>
+    <string name="scr_EXIT_Mesg3">出口</string>
+    <string name="select_list">您可以通过按住来删除该号码</string>
 
 
     //Note String
     <string name="activity_title_home">Notes</string>
     //저장한 번호가 없다.
-    <string name="msg_no_notes">저장된 번호가 없습니다。</string>
+    <string name="msg_no_notes">没有保存的号码。</string>
     <string name="lbl_new_note_title">New Note</string>
     <string name="lbl_edit_note_title">Edit Note</string>
     <string name="hint_enter_note">Enter your note!</string>

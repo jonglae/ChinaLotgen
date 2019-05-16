@@ -25,7 +25,6 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="n">
         <activity android:name="gotopark.buster.chinaLotgen.Main2Activity" />
-        <activity android:name="gotopark.buster.chinaLotgen.externaldb.ExternalDBActivity" />
 
         <activity
             android:name="gotopark.buster.chinaLotgen.MainActivity"

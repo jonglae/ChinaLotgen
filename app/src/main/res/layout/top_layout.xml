@@ -12,17 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="4dp"
-        android:background="#F2006354"
+        android:background="#C54949"
         android:gravity="center_vertical"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.2"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:textStyle="bold"
-        android:shadowColor="@android:color/background_dark"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.2"/>
+        android:textStyle="bold" />
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -36,50 +36,58 @@
 
             <ImageView
                 android:id="@+id/ballimage1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
-                ads:srcCompat="@drawable/ball1" />
+                app:srcCompat="@drawable/ball3" />
 
             <ImageView
                 android:id="@+id/ballimage2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
-                ads:srcCompat="@drawable/ball2" />
+                app:srcCompat="@drawable/ball3" />
 
             <ImageView
                 android:id="@+id/ballimage3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 ads:srcCompat="@drawable/ball3" />
 
             <ImageView
                 android:id="@+id/ballimage4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
-                ads:srcCompat="@drawable/ball4" />
+                app:srcCompat="@drawable/ball3" />
 
             <ImageView
                 android:id="@+id/ballimage5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
-                ads:srcCompat="@drawable/ball5" />
+                app:srcCompat="@drawable/ball3" />
 
             <ImageView
                 android:id="@+id/ballimage6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_weight="1"
-                ads:srcCompat="@drawable/ball6" />
+                app:srcCompat="@drawable/ball3" />
+
+            <ImageView
+                android:id="@+id/ballimage7"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ball2" />
 
         </LinearLayout>
 
@@ -87,14 +95,14 @@
             android:id="@+id/textbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             tools:ignore="DuplicateIds">
 
             <TextView
                 android:id="@+id/balltext1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -109,8 +117,8 @@
 
             <TextView
                 android:id="@+id/balltext2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -125,8 +133,8 @@
 
             <TextView
                 android:id="@+id/balltext3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -141,8 +149,8 @@
 
             <TextView
                 android:id="@+id/balltext4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -157,8 +165,8 @@
 
             <TextView
                 android:id="@+id/balltext5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -173,8 +181,24 @@
 
             <TextView
                 android:id="@+id/balltext6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balltext7"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="7dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
                 android:shadowDx="5"
@@ -216,7 +240,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:text="전체/평균"
+            android:text="@string/sw1_text1"
             android:textAlignment="center"
             android:textColor="@color/white" />
 
@@ -226,7 +250,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/btn_tedadmob_primary"
-            android:text="단타/연타"
+            android:text="@string/sw2_text2"
             android:textAlignment="center"
             android:textColor="@color/white" />
 

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -22,9 +23,15 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +51,10 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -71,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Balltxt4;
     private TextView Balltxt5;
     private TextView Balltxt6;
+    private TextView Balltxt7;
 
     private TextView Rtext1;
     private TextView Rtext2;
@@ -81,12 +93,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Rtext7;
     private TextView Rtext8;
 
-    private ImageView Ballimg1;
-    private ImageView Ballimg2;
-    private ImageView Ballimg3;
-    private ImageView Ballimg4;
-    private ImageView Ballimg5;
-    private ImageView Ballimg6;
+
 
     private ImageView RBall1;
     private ImageView RBall2;
@@ -94,13 +101,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageView RBall4;
     private ImageView RBall5;
     private ImageView RBall6;
-    private ImageView RBall7;
     private ImageView RBall8;
 
     private TextView Rtilte;
-    private TextView Resultwin1;
-    private TextView Resultwin2;
-    private TextView Resultwin3;
+
     private InterstitialAd mInterstitialAd;
 
     private Switch sw1, sw2;
@@ -136,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             LotCOPY();
-            ctextR = ctextR + "\n" + "추첨일 : " + LotDate;
+            ctextR = ctextR + "\n" + "彩票日 : " + LotDate;
             ctextR = ctextR + "\n" + SUM_lotto_num + "\n" + getString(R.string.twiter_CH);
 
 
@@ -144,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (Objects.equals("0", comText)) {
 
-                text1.setText("우선 번호생성 부터 하세요!\n");
+                text1.setText("首先开始生成数字！\n");
                 text1.append(getString(R.string.app_Das));
 
             } else {
@@ -175,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (Objects.equals(ctextR, comText)) {
 
-                text1.setText("우선 번호생성 부터 하세요 !\n");
+                text1.setText("首先开始生成数字！\n");
                 text1.append(getString(R.string.app_Das));
 
 
@@ -185,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 assert clipboard != null;
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(MainActivity.this, "행운의 로또번호가 복사됐습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "幸运乐透号码已复制。", Toast.LENGTH_SHORT).show();
                 text1.setText("!!! Lotto Number Copied !!!");
             }
         }
@@ -204,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
 
 //            MultiClick = Model.getClick();
 
-                            Log.d("====MultiClick====", String.valueOf(MultiClick));
+            Log.d("====MultiClick====", String.valueOf(MultiClick));
 
             if (MultiClick == 1) {
                 // 반복 회수 지정
@@ -223,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @SuppressLint("SetTextI18n")
                 public void onTick(long millisUntilFinished) {
-                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 25 + "00ms 남았습니다.");
+                    text10.setText(" - 小数分析 - " + millisUntilFinished / 25 + "00ms 留。");
                     GenNumber();
                 }
 
@@ -247,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    
+
     public void launchActivity(Class<?> clss) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -259,7 +263,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
 
 
     public void launchFullFragmentActivity(View v) {
@@ -302,7 +305,6 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         model = new Model();
 
@@ -354,6 +356,7 @@ public class MainActivity extends AppCompatActivity {
         Balltxt4 = findViewById(R.id.balltext4);
         Balltxt5 = findViewById(R.id.balltext5);
         Balltxt6 = findViewById(R.id.balltext6);
+        Balltxt7 = findViewById(R.id.balltext7);
 
 
         Rtext1 = findViewById(R.id.Rtext1);
@@ -374,13 +377,6 @@ public class MainActivity extends AppCompatActivity {
         Button btn6 = findViewById(R.id.button6);
 
 
-        Ballimg1 = findViewById(R.id.ballimage1);
-        Ballimg2 = findViewById(R.id.ballimage2);
-        Ballimg3 = findViewById(R.id.ballimage3);
-        Ballimg4 = findViewById(R.id.ballimage4);
-        Ballimg5 = findViewById(R.id.ballimage5);
-        Ballimg6 = findViewById(R.id.ballimage6);
-
 
         //========================================================================
 
@@ -390,15 +386,11 @@ public class MainActivity extends AppCompatActivity {
         RBall4 = findViewById(R.id.RBall4);
         RBall5 = findViewById(R.id.RBall5);
         RBall6 = findViewById(R.id.RBall6);
-        RBall7 = findViewById(R.id.RBall7);
         RBall8 = findViewById(R.id.RBall8);
 
         //========================================================================
 
         Rtilte = findViewById(R.id.rtitle);
-        Resultwin1 = findViewById(R.id.winText1);
-        Resultwin2 = findViewById(R.id.winText2);
-        Resultwin3 = findViewById(R.id.winText3);
 
         sw1 = findViewById(R.id.switch1);
         sw2 = findViewById(R.id.switch2);
@@ -418,12 +410,12 @@ public class MainActivity extends AppCompatActivity {
         sw2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sw2.isChecked()){
+                if (sw2.isChecked()) {
 
                     MultiClick = 1;
 //                Model.setClick(MultiClick);
 
-            } else {
+                } else {
 
                     MultiClick = 0;
 //                    Model.setClick(MultiClick);
@@ -479,7 +471,7 @@ public class MainActivity extends AppCompatActivity {
 
                 ClickCount = 1;
 
-                String Mesg1 = "번호 저장 완료";
+                String Mesg1 = "保存号码已完成";
 
                 //The number has been saved.
                 text10.setText(ctextRlist + " -> " + Mesg1);
@@ -487,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
 
-                text10.setText("번호 생성 부터 해주세요");
+                text10.setText("请创建号码。");
 
             }
         }
@@ -554,13 +546,14 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint({"SetTextI18n", "ResourceType", "Assert"})
     public void GenNumber() {
         int[] res = new int[6];
+        String blue_res;
 
-        int dball1;
-        int dball2;
-        int dball3;
-        int dball4;
-        int dball5;
-        int dball6;
+//        int dball1;
+//        int dball2;
+//        int dball3;
+//        int dball4;
+//        int dball5;
+//        int dball6;
 
         randomNum Num = new randomNum();
         numtoimg NumtoI = new numtoimg();
@@ -570,23 +563,26 @@ public class MainActivity extends AppCompatActivity {
 
         if (randconut == 1) {
             assert false;
-            res[0] = random.nextInt(7 - 1 + 1) + 1;
-            res[1] = random.nextInt(16 - 8 + 1) + 8;
-            res[2] = random.nextInt(24 - 17 + 1) + 17;
-            res[3] = random.nextInt(33 - 25 + 1) + 25;
-            res[4] = random.nextInt(41 - 34 + 1) + 34;
-            res[5] = random.nextInt(45 - 42 + 1) + 42;
+            res[0] = random.nextInt(6 - 1 + 1) + 1;
+            res[1] = random.nextInt(11 - 6 + 1) + 6;
+            res[2] = random.nextInt(18 - 12 + 1) + 12;
+            res[3] = random.nextInt(24 - 19 + 1) + 19;
+            res[4] = random.nextInt(30 - 25 + 1) + 25;
+            res[5] = random.nextInt(33 - 31 + 1) + 31;
+            blue_res = String.valueOf(random.nextInt(16 - 1 + 1) + 1);
+
 
         } else {
-            res = Num.lotArray(6, 45);
+            res = Num.lotArray(6, 33);
+            blue_res = String.valueOf(random.nextInt(16 - 1 + 1) + 1);
         }
 
-        dball1 = NumtoI.Numimg(res[0]);
-        dball2 = NumtoI.Numimg(res[1]);
-        dball3 = NumtoI.Numimg(res[2]);
-        dball4 = NumtoI.Numimg(res[3]);
-        dball5 = NumtoI.Numimg(res[4]);
-        dball6 = NumtoI.Numimg(res[5]);
+//        dball1 = NumtoI.Numimg(res[0]);
+//        dball2 = NumtoI.Numimg(res[1]);
+//        dball3 = NumtoI.Numimg(res[2]);
+//        dball4 = NumtoI.Numimg(res[3]);
+//        dball5 = NumtoI.Numimg(res[4]);
+//        dball6 = NumtoI.Numimg(res[5]);
 
         Balltxt1.setText(String.valueOf(res[0]));
         Balltxt2.setText(String.valueOf(res[1]));
@@ -594,13 +590,14 @@ public class MainActivity extends AppCompatActivity {
         Balltxt4.setText(String.valueOf(res[3]));
         Balltxt5.setText(String.valueOf(res[4]));
         Balltxt6.setText(String.valueOf(res[5]));
+        Balltxt7.setText(blue_res);
 
-        Ballimg1.setImageResource(dball1);
-        Ballimg2.setImageResource(dball2);
-        Ballimg3.setImageResource(dball3);
-        Ballimg4.setImageResource(dball4);
-        Ballimg5.setImageResource(dball5);
-        Ballimg6.setImageResource(dball6);
+//        Ballimg1.setImageResource(dball1);
+//        Ballimg2.setImageResource(dball2);
+//        Ballimg3.setImageResource(dball3);
+//        Ballimg4.setImageResource(dball4);
+//        Ballimg5.setImageResource(dball5);
+//        Ballimg6.setImageResource(dball6);
 
     }
 
@@ -613,8 +610,8 @@ public class MainActivity extends AppCompatActivity {
         Elements F11;
         Elements F12;
         Elements F13;
-        Elements F14;
-        Elements F15;
+        String F14;
+        String F15;
         String tiTle;
 
         @Override
@@ -665,8 +662,9 @@ public class MainActivity extends AppCompatActivity {
                 F11 = document.select(getString(R.string.jsoup_q2));
                 F12 = document.select(getString(R.string.jsoup_q3));
                 F13 = document.select(getString(R.string.jsoup_q4));
-                F14 = document.select(getString(R.string.jsoup_q5));
-                F15 = document.select(getString(R.string.jsoup_q6));
+                F14 = String.valueOf(document.select(getString(R.string.jsoup_q5)));
+                F15 = String.valueOf(document.select(getString(R.string.jsoup_q6)));
+
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -679,142 +677,127 @@ public class MainActivity extends AppCompatActivity {
         public void onPostExecute(Void result) {
 
 
+            TextView rowview1,rowview2,rowview3;
+            TextView rowview4,rowview5,rowview6;
+            TextView rowview7,rowview8,rowview9;
+            TextView rowview10,rowview11,rowview12;
+            TextView rowview13,rowview14,rowview15;
+
+            TextView stackMony1;
+            TextView stackMony2;
+
+
+            rowview1 = findViewById(R.id.rowview1);
+            rowview2 = findViewById(R.id.rowview2);
+            rowview3 = findViewById(R.id.rowview3);
+            rowview4 = findViewById(R.id.rowview4);
+            rowview5 = findViewById(R.id.rowview5);
+            rowview6 = findViewById(R.id.rowview6);
+            rowview7 = findViewById(R.id.rowview7);
+            rowview8 = findViewById(R.id.rowview8);
+            rowview9 = findViewById(R.id.rowview9);
+            rowview10 = findViewById(R.id.rowview10);
+            rowview11 = findViewById(R.id.rowview11);
+            rowview12 = findViewById(R.id.rowview12);
+            rowview13 = findViewById(R.id.rowview13);
+            rowview14 = findViewById(R.id.rowview14);
+            rowview15 = findViewById(R.id.rowview15);
+
+            stackMony1 = findViewById(R.id.stackMony1);
+            stackMony2 = findViewById(R.id.stackMony2);
+
+
+
             String[] lotto_num = new String[7];
-            String LotCount;
-//            String LotDate;
-            String LotWin;
-            String prize_data;
+
+            List<String> ItemsList;
+
+
+
             if (tiTle != null) {
 
-                String KoLotto = "";
-                for (Element e : F12) {
-                    String alt = e.attr("alt");
-
-                    KoLotto += ", " + alt;
-                }
-                KoLotto = KoLotto.replaceAll(" ", "");
-
-                KoLotto = KoLotto.substring(1);
-                lotto_num = KoLotto.split(",");
-                String SUM_lotto_num1 = lotto_num[0] + ", " +
-                        lotto_num[1] + ", " +
-                        lotto_num[2] + ", " +
-                        lotto_num[3] + ", " +
-                        lotto_num[4] + ", " +
-                        lotto_num[5];
+                //추첨일
+                String F10_1 = F10.toString().replaceAll("\\<.*?>", "");
+                F10_1 = F10_1.replaceAll("\n", "");
+                F10_1 = F10_1.replaceAll(" ", "");
 
 
-                SUM_lotto_num = SUM_lotto_num1 + "\n보너스 번호 :" + lotto_num[6];
+                //쌍색구 번호
+                String F11_1 = F11.toString().replaceAll("\\<.*?>", "");
+                F11_1 = F11_1.replaceAll(" ", "");
+                String[] aF11_1 = F11_1.split("\n");
+
+                //당첨 정보
+                String F12_1 = F13.toString().replaceAll("\\<.*?>", "");
+                String[] aF12_1 = F12_1.split("\n");
+
+                       Log.d("==============", Arrays.toString(aF12_1));
+
+                       // 당첨 누적액
+                String nowsell_mony = F14.replaceAll("\\<.*?>", "");
+                String next1won = F15.replaceAll("\\<.*?>", "");
 
 
-                LotCount = F10.toString().replaceAll("\\<.*?>", "");
-                LotDate = F11.toString().replaceAll("\\<.*?>", "");
-
-                // 로또 당첨 등수
-                LotWin = F13.toString().replaceAll("\\<.*?>", "");
-                LotWin = LotWin.replaceAll("  ", "");
-                LotWin = LotWin.replaceAll("\n", "");
-                LotWin = LotWin.replaceAll("", "");
-                LotWin = LotWin.replaceAll("  ", "\n");
-                LotWin = LotWin.replaceAll("당첨정보 상세보기", "");
-                LotWin = LotWin.replaceAll("₩", " = (₩)");
+                //Impresion
+                Rtilte.setText(F10_1);
 
 
-                Log.e("================>", String.valueOf(F14));
-                // 다음회차 정보
-                String Linfo = F14.toString().replaceAll("\\<.*?>", "");
-                Linfo = Linfo.replaceAll("\n", "");
-                Log.e("1Linfo================>", String.valueOf(Linfo));
 
-                Linfo = Linfo.replaceAll("   ", "\n");
-                Log.e("2Linfo===============>", String.valueOf(Linfo));
+                //당첨번호 표시
+                RBall1.setImageResource(R.drawable .ball3);
+                RBall2.setImageResource(R.drawable .ball3);
+                RBall3.setImageResource(R.drawable .ball3);
+                RBall4.setImageResource(R.drawable .ball3);
+                RBall5.setImageResource(R.drawable .ball3);
+                RBall6.setImageResource(R.drawable .ball3);
+                RBall8.setImageResource(R.drawable .ball2);
 
-                Linfo = Linfo.replaceAll("  ", "");
-                Log.e("3Linfo===============>", String.valueOf(Linfo));
-                prize_data = F15.toString().replaceAll("\\<.*?>", "");
-                prize_data = prize_data.replaceAll("₩", "");
-                prize_data = prize_data.replaceAll(",", "");
-
-//                prize_data = String.valueOf(F15);
-
-
-                String Cpriz_data = MonyCalc.convertHangul(prize_data);
-                Log.e("3Linfo===============>", Cpriz_data);
-
-                int[] res = new int[7];
-
-                int dball1;
-                int dball2;
-                int dball3;
-                int dball4;
-                int dball5;
-                int dball6;
-                int dball8;
-
-                numtoimg2 NumtoI2 = new numtoimg2();
-
-
-                res[0] = Integer.parseInt(lotto_num[0]);
-                res[1] = Integer.parseInt(lotto_num[1]);
-                res[2] = Integer.parseInt(lotto_num[2]);
-                res[3] = Integer.parseInt(lotto_num[3]);
-                res[4] = Integer.parseInt(lotto_num[4]);
-                res[5] = Integer.parseInt(lotto_num[5]);
-                res[6] = Integer.parseInt(lotto_num[6]);
-
-                Model.setWeeknum(lotto_num);
-
-                dball1 = NumtoI2.Numimg2(res[0]);
-                dball2 = NumtoI2.Numimg2(res[1]);
-                dball3 = NumtoI2.Numimg2(res[2]);
-                dball4 = NumtoI2.Numimg2(res[3]);
-                dball5 = NumtoI2.Numimg2(res[4]);
-                dball6 = NumtoI2.Numimg2(res[5]);
-                dball8 = NumtoI2.Numimg2(res[6]);
-
-
-                Rtilte.setText(LotCount + "추첨일:" + LotDate);
-                Resultwin1.setText(LotWin);
-                Resultwin2.setText(Linfo);
-                Resultwin3.setText(Cpriz_data);
-
-
-                RBall1.setImageResource(dball1);
-                RBall2.setImageResource(dball2);
-                RBall3.setImageResource(dball3);
-                RBall4.setImageResource(dball4);
-                RBall5.setImageResource(dball5);
-                RBall6.setImageResource(dball6);
-                RBall8.setImageResource(dball8);
-
-
-                // 당첨 번호 표시
-                Rtext1.setText(String.valueOf(lotto_num[0]));
-                Rtext2.setText(String.valueOf(lotto_num[1]));
-                Rtext3.setText(String.valueOf(lotto_num[2]));
-                Rtext4.setText(String.valueOf(lotto_num[3]));
-                Rtext5.setText(String.valueOf(lotto_num[4]));
-                Rtext6.setText(String.valueOf(lotto_num[5]));
+                Rtext1.setText(String.valueOf(aF11_1[1]));
+                Rtext2.setText(String.valueOf(aF11_1[2]));
+                Rtext3.setText(String.valueOf(aF11_1[3]));
+                Rtext4.setText(String.valueOf(aF11_1[4]));
+                Rtext5.setText(String.valueOf(aF11_1[5]));
+                Rtext6.setText(String.valueOf(aF11_1[6]));
                 Rtext7.setText("+");
-                Rtext8.setText(String.valueOf(lotto_num[6]));
+                Rtext8.setText(String.valueOf(aF11_1[7]));
 
-
+                
                 // 당첨된 번호 랜덤 번호 생성 부분에 표시
-                Balltxt1.setText(String.valueOf(lotto_num[0]));
-                Balltxt2.setText(String.valueOf(lotto_num[1]));
-                Balltxt3.setText(String.valueOf(lotto_num[2]));
-                Balltxt4.setText(String.valueOf(lotto_num[3]));
-                Balltxt5.setText(String.valueOf(lotto_num[4]));
-                Balltxt6.setText(String.valueOf(lotto_num[5]));
+                Balltxt1.setText(String.valueOf(aF11_1[1]));
+                Balltxt2.setText(String.valueOf(aF11_1[2]));
+                Balltxt3.setText(String.valueOf(aF11_1[3]));
+                Balltxt4.setText(String.valueOf(aF11_1[4]));
+                Balltxt5.setText(String.valueOf(aF11_1[5]));
+                Balltxt6.setText(String.valueOf(aF11_1[6]));
+                Balltxt7.setText(String.valueOf(aF11_1[7]));
 
+                rowview1.setText(aF12_1[0]);
+                rowview2.setText(aF12_1[1]);
+                rowview3.setText(aF12_1[2]);
+                rowview4.setText(aF12_1[3]);
+                rowview5.setText(aF12_1[4]);
+                rowview6.setText(aF12_1[5]);
+                rowview7.setText(aF12_1[6]);
+                rowview8.setText(aF12_1[7]);
+                rowview9.setText(aF12_1[8]);
+                rowview10.setText(aF12_1[9]);
+                rowview11.setText(aF12_1[10]);
+                rowview12.setText(aF12_1[11]);
+                rowview13.setText(aF12_1[12]);
+                rowview14.setText(aF12_1[13]);
+                rowview15.setText(aF12_1[14]);
+
+
+                stackMony1.setText("本期销售额："+nowsell_mony+"元");
+                stackMony2.setText("下期一等奖奖池累计金额："+next1won+"元");
 
             } else {
 
                 /** 네트웍 품질 문제 발생시 메세지 출력 */
 
                 Rtilte.setText(getString(R.string.net_Info1));
-                Resultwin1.setText(getString(R.string.net_Info2));
-                Resultwin2.setText(getString(R.string.net_Info3));
+                stackMony1.setText(getString(R.string.net_Info2));
+                stackMony2.setText(getString(R.string.net_Info3));
 
             }
 
@@ -827,4 +810,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }

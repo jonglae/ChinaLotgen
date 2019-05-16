@@ -97,7 +97,7 @@ public class Main2Activity extends AppCompatActivity {
                 mlotnum = mlotnum.replace(" ", "");
                 mlotnum = mlotnum.replace("(", ",");
                 ClickNum = mlotnum.split(",",7);
-                                Log.d("====mlotnum====", ClickNum[5]);
+//                                Log.d("====mlotnum====", ClickNum[5]);
 
                 //중복 check 메소드
                 results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));

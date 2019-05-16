@@ -9,8 +9,4 @@ class Model {
     static void setWeeknum(String[] weeknum) {
         Weeknum = weeknum;
     }
-
-
-
-
 }

@@ -10,8 +10,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
-
-import java.util.Arrays;
 import java.util.Random;
 
 import gun0912.ted.tedadmobdialog.TedAdmobDialog;
@@ -123,7 +121,7 @@ class BackProcessHandler {
         int wrdMax = sayword.length;
         int i = rand.nextInt(wrdMax);
 
-        Log.e("=========", Arrays.toString(sayword));
+//        Log.e("=========", Arrays.toString(sayword));
 
         return sayword[i];
     }

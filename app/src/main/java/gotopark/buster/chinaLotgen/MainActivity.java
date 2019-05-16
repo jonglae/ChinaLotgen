@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -150,13 +149,9 @@ public class MainActivity extends AppCompatActivity {
     Button.OnClickListener EXIT = new View.OnClickListener() {
         public void onClick(View v) {
             onBackPressed();
-
-//리스트 뷰 테스트
-//            Intent intent = new Intent(MainActivity.this, ExternalDBActivity.class);
-//            startActivity(intent);
-
         }
     };
+
 
     Button.OnClickListener copy = new View.OnClickListener() {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -178,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 assert clipboard != null;
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(MainActivity.this, "幸运乐透号码已复制。", Toast.LENGTH_SHORT).show();
-                text1.setText("!!! Lotto Number Copied !!!");
+                text1.setText("!!! 乐透号码已复制 !!!");
             }
         }
     };
@@ -196,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
 //            MultiClick = Model.getClick();
 
-            Log.d("====MultiClick====", String.valueOf(MultiClick));
+//            Log.d("====MultiClick====", String.valueOf(MultiClick));
 
             if (MultiClick == 1) {
                 // 반복 회수 지정

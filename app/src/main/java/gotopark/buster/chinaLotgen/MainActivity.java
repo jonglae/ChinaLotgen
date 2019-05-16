@@ -296,8 +296,7 @@ public class MainActivity extends AppCompatActivity {
         ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 + "" +
                 "  ("+ctext7+")";
 
-        ctextR = App_Share + ctextRlist + "\n\n" + App_links1;
-
+        ctextR = App_Share + ctextRlist + "\n";
     }
 
 
@@ -716,6 +715,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //Impresion
+
+                LotDate = F10_1;
+
                 Rtilte.setText(F10_1);
 
 
@@ -737,6 +739,16 @@ public class MainActivity extends AppCompatActivity {
                 Rtext6.setText(String.valueOf(aF11_1[6]));
                 Rtext7.setText("+");
                 Rtext8.setText(String.valueOf(aF11_1[7]));
+
+
+                SUM_lotto_num = aF11_1[1] + " ," +
+                        aF11_1[2] + " ," +
+                        aF11_1[3] + " ," +
+                        aF11_1[4] + " ," +
+                        aF11_1[5] + " ," +
+                        aF11_1[6] + "   (" +
+                        aF11_1[7] + ")";
+
 
                 // 로또넘버 맞추기 위해서 모델로 셋
                 Model.setWeeknum(aF11_1);

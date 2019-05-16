@@ -23,15 +23,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +37,7 @@ import com.google.android.gms.ads.MobileAds;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -51,10 +45,7 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -63,9 +54,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-import gotopark.buster.chinaLotgen.Module.MonyCalc;
 import gotopark.buster.chinaLotgen.Module.numtoimg;
-import gotopark.buster.chinaLotgen.Module.numtoimg2;
 import gotopark.buster.chinaLotgen.Module.randomNum;
 import gotopark.buster.chinaLotgen.database.DatabaseHelper;
 import gotopark.buster.chinaLotgen.qrCodeReader.FullScannerFragmentActivity;
@@ -92,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView Rtext6;
     private TextView Rtext7;
     private TextView Rtext8;
-
 
 
     private ImageView RBall1;
@@ -294,7 +282,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 + "" +
-                "  ("+ctext7+")";
+                "  (" + ctext7 + ")";
 
         ctextR = App_Share + ctextRlist + "\n";
     }
@@ -377,7 +365,6 @@ public class MainActivity extends AppCompatActivity {
         Button btn4 = findViewById(R.id.button4);
         Button btn5 = findViewById(R.id.button5);
         Button btn6 = findViewById(R.id.button6);
-
 
 
         //========================================================================
@@ -660,11 +647,11 @@ public class MainActivity extends AppCompatActivity {
         public void onPostExecute(Void result) {
 
 
-            TextView rowview1,rowview2,rowview3;
-            TextView rowview4,rowview5,rowview6;
-            TextView rowview7,rowview8,rowview9;
-            TextView rowview10,rowview11,rowview12;
-            TextView rowview13,rowview14,rowview15;
+            TextView rowview1, rowview2, rowview3;
+            TextView rowview4, rowview5, rowview6;
+            TextView rowview7, rowview8, rowview9;
+            TextView rowview10, rowview11, rowview12;
+            TextView rowview13, rowview14, rowview15;
 
             TextView stackMony1;
             TextView stackMony2;
@@ -707,9 +694,9 @@ public class MainActivity extends AppCompatActivity {
                 String F12_1 = F13.toString().replaceAll("\\<.*?>", "");
                 String[] aF12_1 = F12_1.split("\n");
 
-                       Log.d("==============", Arrays.toString(aF12_1));
+                Log.d("==============", Arrays.toString(aF12_1));
 
-                       // 당첨 누적액
+                // 당첨 누적액
                 String nowsell_mony = F14.replaceAll("\\<.*?>", "");
                 String next1won = F15.replaceAll("\\<.*?>", "");
 
@@ -721,15 +708,14 @@ public class MainActivity extends AppCompatActivity {
                 Rtilte.setText(F10_1);
 
 
-
                 //당첨번호 표시
-                RBall1.setImageResource(R.drawable .ball3);
-                RBall2.setImageResource(R.drawable .ball3);
-                RBall3.setImageResource(R.drawable .ball3);
-                RBall4.setImageResource(R.drawable .ball3);
-                RBall5.setImageResource(R.drawable .ball3);
-                RBall6.setImageResource(R.drawable .ball3);
-                RBall8.setImageResource(R.drawable .ball2);
+                RBall1.setImageResource(R.drawable.ball3);
+                RBall2.setImageResource(R.drawable.ball3);
+                RBall3.setImageResource(R.drawable.ball3);
+                RBall4.setImageResource(R.drawable.ball3);
+                RBall5.setImageResource(R.drawable.ball3);
+                RBall6.setImageResource(R.drawable.ball3);
+                RBall8.setImageResource(R.drawable.ball2);
 
                 Rtext1.setText(String.valueOf(aF11_1[1]));
                 Rtext2.setText(String.valueOf(aF11_1[2]));
@@ -778,8 +764,8 @@ public class MainActivity extends AppCompatActivity {
                 rowview15.setText(aF12_1[14]);
 
 
-                stackMony1.setText("本期销售额："+nowsell_mony+"元");
-                stackMony2.setText("下期一等奖奖池累计金额："+next1won+"元");
+                stackMony1.setText("本期销售额：" + nowsell_mony + "元");
+                stackMony2.setText("下期一等奖奖池累计金额：" + next1won + "元");
 
             } else {
 

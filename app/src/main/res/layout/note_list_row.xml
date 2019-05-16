@@ -54,7 +54,7 @@
                 android:shadowDy="5"
                 android:shadowRadius="1.5"
                 android:textAlignment="center"
-                android:textColor="@android:color/holo_orange_dark"
+                android:textColor="#E34211"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
             android:id="@+id/Line"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="@drawable/ripple_share"
+            android:background="@color/colorAccent"
             android:text="TextView" />
 
     </LinearLayout>

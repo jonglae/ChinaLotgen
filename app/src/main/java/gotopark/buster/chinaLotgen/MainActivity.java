@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
 
-                ClipData clip = ClipData.newPlainText("Copied", ctextR);
+                ClipData clip = ClipData.newPlainText("复制", ctextR);
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 assert clipboard != null;
                 clipboard.setPrimaryClip(clip);
@@ -282,6 +282,7 @@ public class MainActivity extends AppCompatActivity {
         String ctext4;
         String ctext5;
         String ctext6;
+        String ctext7;
 
         ctext1 = Balltxt1.getText().toString();
         ctext2 = Balltxt2.getText().toString();
@@ -289,9 +290,11 @@ public class MainActivity extends AppCompatActivity {
         ctext4 = Balltxt4.getText().toString();
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
+        ctext7 = Balltxt7.getText().toString();
 
 
-        ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6;
+        ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 + "" +
+                "  ("+ctext7+")";
 
         ctextR = App_Share + ctextRlist + "\n\n" + App_links1;
 
@@ -548,13 +551,6 @@ public class MainActivity extends AppCompatActivity {
         int[] res = new int[6];
         String blue_res;
 
-//        int dball1;
-//        int dball2;
-//        int dball3;
-//        int dball4;
-//        int dball5;
-//        int dball6;
-
         randomNum Num = new randomNum();
         numtoimg NumtoI = new numtoimg();
         Random random = new Random();
@@ -577,12 +573,6 @@ public class MainActivity extends AppCompatActivity {
             blue_res = String.valueOf(random.nextInt(16 - 1 + 1) + 1);
         }
 
-//        dball1 = NumtoI.Numimg(res[0]);
-//        dball2 = NumtoI.Numimg(res[1]);
-//        dball3 = NumtoI.Numimg(res[2]);
-//        dball4 = NumtoI.Numimg(res[3]);
-//        dball5 = NumtoI.Numimg(res[4]);
-//        dball6 = NumtoI.Numimg(res[5]);
 
         Balltxt1.setText(String.valueOf(res[0]));
         Balltxt2.setText(String.valueOf(res[1]));
@@ -592,12 +582,6 @@ public class MainActivity extends AppCompatActivity {
         Balltxt6.setText(String.valueOf(res[5]));
         Balltxt7.setText(blue_res);
 
-//        Ballimg1.setImageResource(dball1);
-//        Ballimg2.setImageResource(dball2);
-//        Ballimg3.setImageResource(dball3);
-//        Ballimg4.setImageResource(dball4);
-//        Ballimg5.setImageResource(dball5);
-//        Ballimg6.setImageResource(dball6);
 
     }
 
@@ -707,13 +691,6 @@ public class MainActivity extends AppCompatActivity {
             stackMony2 = findViewById(R.id.stackMony2);
 
 
-
-            String[] lotto_num = new String[7];
-
-            List<String> ItemsList;
-
-
-
             if (tiTle != null) {
 
                 //추첨일
@@ -761,7 +738,8 @@ public class MainActivity extends AppCompatActivity {
                 Rtext7.setText("+");
                 Rtext8.setText(String.valueOf(aF11_1[7]));
 
-                
+                // 로또넘버 맞추기 위해서 모델로 셋
+                Model.setWeeknum(aF11_1);
                 // 당첨된 번호 랜덤 번호 생성 부분에 표시
                 Balltxt1.setText(String.valueOf(aF11_1[1]));
                 Balltxt2.setText(String.valueOf(aF11_1[2]));

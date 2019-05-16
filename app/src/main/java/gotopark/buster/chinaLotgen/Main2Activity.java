@@ -48,7 +48,7 @@ public class Main2Activity extends AppCompatActivity {
         noNotesView = findViewById(R.id.empty_notes_view);
 
         TextView toolbar = findViewById(R.id.saveTitle);
-        toolbar.setText("로또 번호 저장 리스트");
+        toolbar.setText("双色球号码列表");
 
 //        Model model = new Model();
         arrcom = new ArrCom();
@@ -100,12 +100,12 @@ public class Main2Activity extends AppCompatActivity {
                 results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));
 
                 if (results.equals("")) {
-                    updateNote2("이번 회차와 맞는번호 없습니다.", position);
-                    Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
+                    updateNote2("此号码与号码不符。", position);
+                    Toast.makeText(Main2Activity.this, "此号码与号码不符!!", Toast.LENGTH_SHORT).show();
                 } else {
 
                     Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
-                    updateNote2("당첨번호:" + results + "보너스:" + thisBonusNum, position);
+                    updateNote2("获奖号码:" + results + "蓝色的球:" + thisBonusNum, position);
                 }
             }
 
@@ -118,7 +118,7 @@ public class Main2Activity extends AppCompatActivity {
 
         Admob_is();
 
-        Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Main2Activity.this, "没有匹配号码!!", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -204,11 +204,11 @@ public class Main2Activity extends AppCompatActivity {
      */
     private void showActionsDialog(final int position) {
 //        CharSequence[] colors = new CharSequence[]{"Edit", "Delete"};
-        CharSequence[] colors = new CharSequence[]{"[번호삭제?]"};
+        CharSequence[] colors = new CharSequence[]{"[删除号码?]"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // 정말로 삭제 하시 겠습니까.
-        builder.setTitle("정말로 번호를 지우시겠습니까？");
+        builder.setTitle("你真的想删除号码吗？");
         builder.setItems(colors, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -311,12 +311,12 @@ public class Main2Activity extends AppCompatActivity {
         String[] WeekNum = Model.getWeeknum();
         String[] week_six_num = new String[6];
 
-        week_six_num[0] = WeekNum[0];
-        week_six_num[1] = WeekNum[1];
-        week_six_num[2] = WeekNum[2];
-        week_six_num[3] = WeekNum[3];
-        week_six_num[4] = WeekNum[4];
-        week_six_num[5] = WeekNum[5];
+        week_six_num[0] = WeekNum[1];
+        week_six_num[1] = WeekNum[2];
+        week_six_num[2] = WeekNum[3];
+        week_six_num[3] = WeekNum[4];
+        week_six_num[4] = WeekNum[5];
+        week_six_num[5] = WeekNum[6];
 
         return week_six_num;
 //                Log.d("====sumnum====", temp_rnum[0]);
@@ -328,7 +328,7 @@ public class Main2Activity extends AppCompatActivity {
 
         String[] WeekNum = Model.getWeeknum();
         String Bonus_num = "";
-        Bonus_num = WeekNum[6];
+        Bonus_num = WeekNum[7];
         //                Log.d("====sumnum====", temp_rnum[0]);
 
         return Bonus_num;

@@ -247,22 +247,20 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    
     public void launchActivity(Class<?> clss) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA}, ZXING_CAMERA_PERMISSION);
         } else {
-
             Show_front();
-
             Intent intent = new Intent(this, clss);
             startActivity(intent);
-
         }
-
-
     }
+
+
 
     public void launchFullFragmentActivity(View v) {
         launchActivity(FullScannerFragmentActivity.class);

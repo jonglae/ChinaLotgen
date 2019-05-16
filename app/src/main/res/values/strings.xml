@@ -25,10 +25,10 @@
     <string name="Popup_Mesg2">您可以通过按住来删除该号码.</string>
 
 
-    <string name="banner_ad_unit_id">ca-app-pub-5187489598351901/4438118635</string>
-    <string name="google_app_id">1:164039908410:android:8a1be41608f2c08e</string>
-    <string name="google_banner_id">ca-app-pub-5187489598351901~4302387267</string>
-    <string name="interstitial_ad_unit_id">ca-app-pub-5187489598351901/1283812576</string>
+    <string name="banner_ad_unit_id">ca-app-pub-5187489598351901/44381186</string>
+    <!--<string name="google_app_id">1:164039908410:android:8a1be41608f2c08e</string>-->
+    <string name="google_banner_id">ca-app-pub-5187489598351901~43023872</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-5187489598351901/12838125</string>
 
     <string name="app_Google_Play_links">https://goo.gl/YBkc4Y</string>
     <string name="app_OneStore_links">https://goo.gl/GdGXVM</string>

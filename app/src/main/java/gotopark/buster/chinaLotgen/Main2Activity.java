@@ -10,6 +10,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -94,7 +95,9 @@ public class Main2Activity extends AppCompatActivity {
                 Note n = notesList.get(position);
                 String mlotnum = n.getNote();
                 mlotnum = mlotnum.replace(" ", "");
-                ClickNum = mlotnum.split(",");
+                mlotnum = mlotnum.replace("(", ",");
+                ClickNum = mlotnum.split(",",7);
+                                Log.d("====mlotnum====", ClickNum[5]);
 
                 //중복 check 메소드
                 results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));

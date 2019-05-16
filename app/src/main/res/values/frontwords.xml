@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string-array name="FrontItems">
         <item>读书如饭,善吃饭者长精神,不善吃者生疾病。\n독서는 밥과 같다. 잘 먹는 사람은 활력이 넘치지만, 잘 먹지 못하는 사람은 병들게 된다.</item>
-        <item> 药补不如食补,食补不如心补。\n약보다는 잘 먹는 게 좋고, 잘 먹는 것보다는 마음 편한 게 좋다.</item>
+        <item>药补不如食补,食补不如心补。\n약보다는 잘 먹는 게 좋고, 잘 먹는 것보다는 마음 편한 게 좋다.</item>
         <item>有志者事竟成。\n뜻이 있는 곳에 길이 있다.</item>
         <item>滴水能把石穿透，万事功到自然成。\n떨어지는 물방울이 바위를 뚫듯이, 모든 일은 공을 들이면 자연히 성공한다.</item>
         <item>有阅读能力而不愿读好书的人,和文盲没有两样.- 马克·吐温 \n책을 읽을 수 있는데도 책 읽기를 싫어하는 사람은 문맹이나 다를 바 없다。 -마크 트웨인</item>
@@ -35,7 +35,7 @@
         <item>理想是人生的太阳。\nLǐxiǎng shì rénshēng de tàiyáng.\n이상은 인생의 빛(태양)이다.\n"理想[lǐxiǎng]이상 太阳[tàiyáng]태양,햇빛"</item>
         <item>顽强的毅力可以征服世界上的任何一座高峰。\nWánqiáng de yìlì kěyǐ zhēngfú shìjiè shàng de rènhé yīzuò gāofēng.\n굳센 의지는 세상의 어떠한 고봉도 정복할 수 있다. \n"顽强 [wánqiáng]완강하다. 강경하다. 毅力 [yìlì]굳센 의지. 완강한 의지 征服 [zhēngfú] 정복하다. 굴복시키다. 高峰[gāofēng] 고봉,절정"</item>
         <item>人生不会苦一辈子，但一定会苦一阵子。\nRénshēng bù huì kǔ yībèizi, dàn yīdìng huì kǔ yī zhènzi.\n인생은 평생 힘든 것이 아니라 일정 기간 고생하는 것이다.\n "一辈子[yíbèizi]한평생 一阵子[yízhènzi]한바탕,한동안"</item>
-        <item>一个人是可以做到他想做的一切的，需要的只是坚韧不拔的毅力和持久不懈的努力\nYīgè rén shì kěyǐ zuò dào tā xiǎng zuò de yīqiè de, xūyào de zhǐshì jiānrèn bù bá de yìlì hé chíjiǔ bùxiè de nǔlì.\n사람은 자기가 하고 싶은 모든 것을 할 수 있다. 굴하지 않는 의지와 포기하지 않는 노력이 필요할 뿐이다.\n坚忍[jiānrěn]꾹 참고 견디다 毅力[yìlì]굳센 의지 持久[chíjiǔ] 오래 유지되다 不懈[búxiè]게으르지 않다</item>
+        <item>一个人是可以做到他想做的一切的，需要的只是坚韧不拔的毅力和持久不懈的努力 Yīgè rén shì kěyǐ zuò dào tā xiǎng zuò de yīqiè de, xūyào de zhǐshì jiānrèn bù bá de yìlì hé chíjiǔ bùxiè de nǔlì.\n사람은 자기가 하고 싶은 모든 것을 할 수 있다. 굴하지 않는 의지와 포기하지 않는 노력이 필요할 뿐이다.\n坚忍[jiānrěn]꾹 참고 견디다 毅力[yìlì]굳센 의지 持久[chíjiǔ] 오래 유지되다 不懈[búxiè]게으르지 않다</item>
         <item>涓滴之水终可磨损大石块\nJuāndī zhī shuǐ zhōng kě mósǔn dà shí kuài.\n낙숫물이 결국 바위를 뚫는다.\n"涓滴 [juāndī] 물방울. 매우 적은 양의 물   磨损[mósǔn]마모되다  石块[shíkuài]석괴"</item>
         <item>今天要做的事不要等到明天,该自己做的事不要让别人做。\n"Jīntiān yào zuò de shì bùyào děngdào míngtiān,\n오늘 할 일을 내일로 미루지 말고,자신이 해야 할 일을 다른 사람에게 넘기지 마라.\n等到[děngdào] 기다리다  该[gāi] …해야 한다 让[ràng] 책망하다, 사양하다, 양도하다</item>
         <item>仁者见仁，智者见智。Rénzhějiànrén,zhìzhě jiàn zhì. \n 어진 사람은 어질게 보고,지혜로운 사람은 지혜롭게 본다. -역경\n仁者[rénzhě] 인자한 사람  智者[zhìzhě] 지혜로운 사람  见[jiàn] 보다, 마주치다</item>
@@ -46,14 +46,14 @@
         <item>伟大的作品不是靠力量，而是靠坚持来完成的。Wěidà de zuòpǐn bùshì kào lìliàng, ér shì kào jiānchí lái wánchéng de\n위대한 작품은 역량으로 되는 게 아니라,꾸준함으로 완성되는 것이다 \n伟大 [wěidà] 위대하다   靠 [kào] 기대다  坚持 [jiānchí] 견지하다, 단호히 지키다</item>
         <item>不冒险就征服不了危险 Bù màoxiǎn jiù zhēngfú bùliǎo wéixiǎn. \n위험을 무릅쓰지 않으면 위험을 정복할 수 없다.\n冒险 [màoxiǎn] 모험하다, 위험하다  征服 [zhēngfú] 정복하다, 마음을 사로잡다 危险 [wēixiǎn] 위험하다, 위험</item>
         <item>有冒险才有希望。Yǒu màoxiǎn cái yǒu xīwàng.\n위험을 무릅써야 희망이 있다. \n冒险 [màoxiǎn] 모험하다, 위험하다  才 [cái] 겨우. 고작. 기껏</item>
-        <item>人的幸福不是遗产，既不能留下，也不能继承。Rén de xìngfú bùshì yíchǎn, jì bùnéng liú xià, yě bùnéng jìchéng. \n사람의 행복은 유산이 아니다. 남길 수도 없고 상속할 수도 없다. \n遗产 [yíchǎn]유산  既 [jì] 이미 ,…할 뿐만 아니라  继承 [jìchéng] 상속하다, 이어받다</item>
+        <item>人的幸福不是遗产，既不能留下，也不能继承。Rén de xìngfú bùshì yíchǎn, jì bùnéng liú xià, yě bùnéng jìchéng.\n사람의 행복은 유산이 아니다. 남길 수도 없고 상속할 수도 없다. \n遗产 [yíchǎn]유산  既 [jì] 이미 ,…할 뿐만 아니라  继承 [jìchéng] 상속하다, 이어받다</item>
         <item>不怕一万，就怕万一 Búpà yíwàn, jiù pà wànyī.\n무슨 일을 하든 신중해야 한다. (만 번이 두려운 게 아니라 그 가운데 실수 한 번이 두려운 것이다)\n不怕 [búpà] 두려워하지 않다   一万 [yíwàn] 일 만(번)  万一 [wànyī] 만분의 일</item>
-        <item>工作进展得越顺利，我们就越不能掉以轻心。Gōngzuò jìnzhǎn dé yuè shùnlì, wǒmen jiù yuè bùnéng diàoyǐqīngxīn. \n일하는 게 순조로울수록 우리는 경솔해서는 안 된다 \n进展 [jìnzhǎn] 발달하다, 진전하다 \n掉以轻心 [diàoyǐqīngxīn] 대수롭지 않게 여기다</item>
+        <item>工作进展得越顺利，我们就越不能掉以轻心。Gōngzuò jìnzhǎn dé yuè shùnlì, wǒmen jiù yuè bùnéng diàoyǐqīngxīn.\n일하는 게 순조로울수록 우리는 경솔해서는 안 된다 \n进展 [jìnzhǎn] 발달하다, 진전하다 \n掉以轻心 [diàoyǐqīngxīn] 대수롭지 않게 여기다</item>
         <item>身体健壮就是幸福  Shēntǐ jiànzhuàng jiùshì xìngfú \n건강이야말로 행복이다. \n健壮 [jiànzhuàng] 건장하다  就是 [jiùshì] 그래, 단호하고 확정/강조를 나타냄</item>
-        <item>人不能像走兽那样活着,应该追求知识和美德  Rén bùnéng xiàng zǒushòu nàyàng huózhe, yīnggāi zhuīqiú zhīshì hé měidé. \n사람은 짐승처럼 살 수 없고, 지식과 미덕을 추구해야 한다 \n走兽 [zǒushòu] 주수, 길짐승  追求 [zhuīqiú] 추구하다, 구애하다 知识 [zhīshi] 지식</item>
+        <item>人不能像走兽那样活着,应该追求知识和美德  Rén bùnéng xiàng zǒushòu nàyàng huózhe, yīnggāi zhuīqiú zhīshì hé měidé.\n사람은 짐승처럼 살 수 없고, 지식과 미덕을 추구해야 한다 \n走兽 [zǒushòu] 주수, 길짐승  追求 [zhuīqiú] 추구하다, 구애하다 知识 [zhīshi] 지식</item>
         <item>你应该对自己有信心啊。 Nǐ yīnggāi duì zìjǐ yǒu xìnxīn a. \n자신감을 가져야 한다. \n 信心 [xìnxīn] 자신감</item>
-        <item>有些人只有在穷到揭不蒈锅的时候，才会想办法赚钱。Yǒuxiē rén zhǐyǒu zài qióng dào jiē bu kǎi guō de shíhòu, cái huì xiǎng bànfǎ zhuànqián.\n어떤 사람들은 끼니도 해결하지 못할 정도로 어렵게 되어서야 돈 벌 궁리를 한다.\n只有...才[zhǐyǒu...cái] ~이어야만 ~하다  想办法 [xiǎngbànfǎ] 방법을 생각하다   赚钱 [zhuànqián] 돈을 벌다</item>
-        <item>学习外语就像登山一样，要一步一步地攀登，不要想一步登天。Xuéxí wàiyǔ jiù xiàng dēngshān yīyàng, yào yībù yībù de pāndēng, bùyào xiǎng yībù děng tiān. \n외국어를 공부하는 것은 등산과 같아서 한걸음씩 올라야지, 한번에 정복하려 해서는 안된다.\n一步一步地 [yíbùyíbùde]한 발짝 씩   攀登[pāndēng]등반하다  一步登天 [yíbùdēngtiān] 한 걸음에 하늘까지 오르다</item>
+        <item tools:ignore="TypographyEllipsis">有些人只有在穷到揭不蒈锅的时候，才会想办法赚钱。Yǒuxiē rén zhǐyǒu zài qióng dào jiē bu kǎi guō de shíhòu, cái huì xiǎng bànfǎ zhuànqián.\n어떤 사람들은 끼니도 해결하지 못할 정도로 어렵게 되어서야 돈 벌 궁리를 한다.\n只有...才[zhǐyǒu...cái] ~이어야만 ~하다  想办法 [xiǎngbànfǎ] 방법을 생각하다   赚钱 [zhuànqián] 돈을 벌다</item>
+        <item tools:ignore="Typos">学习外语就像登山一样，要一步一步地攀登，不要想一步登天。Xuéxí wàiyǔ jiù xiàng dēngshān yīyàng, yào yībù yībù de pāndēng, bùyào xiǎng yībù děng tiān. \n외국어를 공부하는 것은 등산과 같아서 한걸음씩 올라야지, 한번에 정복하려 해서는 안된다.\n一步一步地 [yíbùyíbùde]한 발짝 씩   攀登[pāndēng]등반하다  一步登天 [yíbùdēngtiān] 한 걸음에 하늘까지 오르다</item>
         <item>使时间充实就是幸福。Shǐ shíjiān chōngshí jiùshì xìngfú.\n시간을 충실하게 쓰는 것이 바로 행복이다.\n使[shǐ]파견하다,…시키다,사용하다   充实[chōngshí]충족시키다   幸福[xìngfú]행복하다,행복</item>
         <item>目标愈高，志向就愈可贵。Mùbiāo yù gāo, zhìxiàng jiù yù kěguì.\n목표가 높을수록 포부가 고귀하다. \n目标[mùbiāo]목적물,목표   愈…愈 [yù…yù…] …할수록…하다   志向[zhìxiàng]지향  可贵[kěguì]귀중하다</item>
         <item>耳听为虚，眼见为实。Ěr tīng wèi xū, yǎnjiàn wéi shí.\n소문을 듣지 말고 눈으로 직접 봐라. \n虚[xū]비다,겸허하다,허약하다   眼见[yǎnjiàn]눈으로 직접 보다</item>

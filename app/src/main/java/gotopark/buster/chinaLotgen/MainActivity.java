@@ -288,10 +288,10 @@ public class MainActivity extends AppCompatActivity {
         ctext7 = Balltxt7.getText().toString();
 
 
-        ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 + "" +
+        ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 +
                 "  (" + ctext7 + ")";
 
-        ctextR = App_Share + ctextRlist + "\n";
+        ctextR = App_Share + ctextRlist + "\n" + App_links1;
     }
 
 
@@ -439,7 +439,7 @@ public class MainActivity extends AppCompatActivity {
         sw1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                soundpool.play(tak, 10, 10, 1, 0, 0);
+                soundpool.play(tak, 1, 1, 1, 0, 0);
                 if (sw1.isChecked()) {
 
                     randconut = 1;

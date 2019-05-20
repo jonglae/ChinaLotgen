@@ -9,7 +9,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 28
         multiDexEnabled true
-        versionCode 4
+        versionCode 5
         versionName '1.0.2'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -31,17 +31,13 @@ android {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
-
 }
-
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
-
     })
-
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
@@ -55,16 +51,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-ads:17.2.0'
     //    implementation 'com.google.android.gms:play-services-ads:17.2.0'
 
-
-
     testImplementation 'org.testng:testng:6.9.6'
     testImplementation 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M3'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.0.0-M3'
-
-
 }
 repositories {
     mavenCentral()
-
-
 }

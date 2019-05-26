@@ -183,20 +183,20 @@ public class MainActivity extends AppCompatActivity {
         int millisec;
 
         public void onClick(View v) {
-            soundpool.play(tak, 1, 1, 1, 0, 1);
+            soundpool.play(tak, 1, 1, 0, 0, 1);
 
             if (MultiClick == 1) {
                 int xnum = rand.nextInt(9);
                 millisec = Times_Ran[xnum];
             } else {
-                millisec = 50;
+                millisec = 10;
             }
 
-            CountDownTimer start = new CountDownTimer(millisec, 25) {
+            CountDownTimer start = new CountDownTimer(millisec, 5) {
                 @SuppressLint("SetTextI18n")
                 public void onTick(long millisUntilFinished) {
-                    soundpool.play(tak, 1, 1, 1, 0, 1);
-                    text10.setText(" - 小数分析 - " + millisUntilFinished / 25 + "00ms 留。");
+                    soundpool.play(tak, 1, 1, 0, 0, 1);
+                    text10.setText(" - 小数分析 - " + millisUntilFinished /10 + "00ms 留。");
                     GenNumber();
                 }
                 @SuppressLint("SetTextI18n")
@@ -329,6 +329,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn4 = findViewById(R.id.button4);
         Button btn5 = findViewById(R.id.button5);
         Button btn6 = findViewById(R.id.button6);
+        Button btn7 = findViewById(R.id.button7);
 
         //========================================================================
 
@@ -384,6 +385,7 @@ public class MainActivity extends AppCompatActivity {
         btn4.setOnClickListener(Lot_share);
         btn5.setOnClickListener(Lot_save);
         btn6.setOnClickListener(Lot_list);
+        btn7.setOnClickListener(Num_Choice);
         text10.setOnClickListener(MDCT);
 
 
@@ -428,6 +430,19 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             soundpool.play(tok, 1, 1, 1, 0, 1);
             Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+            startActivity(intent);
+        }
+    };
+
+
+
+    public Button.OnClickListener Num_Choice = new View.OnClickListener() {
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onClick(View v) {
+            soundpool.play(tok, 1, 1, 1, 0, 1);
+            Intent intent = new Intent(MainActivity.this, Main3Activity.class);
             startActivity(intent);
         }
     };

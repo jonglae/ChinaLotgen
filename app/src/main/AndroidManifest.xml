@@ -24,7 +24,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name="gotopark.buster.chinaLotgen.Main2Activity" />
+
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".Main3Activity" />
 
         <activity
             android:name="gotopark.buster.chinaLotgen.MainActivity"

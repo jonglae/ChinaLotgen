@@ -124,13 +124,13 @@ public class OneCardAdapter extends ArrayAdapter<Card> {
         viewHolder.Rtext6.setText(Lotnum[5]);
         viewHolder.Rtext7.setText(Lotnum[6]);
 
-        viewHolder.Rtext1.setBackgroundResource(R.drawable.ball4);
-        viewHolder.Rtext2.setBackgroundResource(R.drawable.ball4);
-        viewHolder.Rtext3.setBackgroundResource(R.drawable.ball4);
-        viewHolder.Rtext4.setBackgroundResource(R.drawable.ball4);
-        viewHolder.Rtext5.setBackgroundResource(R.drawable.ball4);
-        viewHolder.Rtext6.setBackgroundResource(R.drawable.ball4);
-        viewHolder.Rtext7.setBackgroundResource(R.drawable.ball3);
+        viewHolder.Rtext1.setBackgroundResource(R.drawable.ball3);
+        viewHolder.Rtext2.setBackgroundResource(R.drawable.ball3);
+        viewHolder.Rtext3.setBackgroundResource(R.drawable.ball3);
+        viewHolder.Rtext4.setBackgroundResource(R.drawable.ball3);
+        viewHolder.Rtext5.setBackgroundResource(R.drawable.ball3);
+        viewHolder.Rtext6.setBackgroundResource(R.drawable.ball3);
+        viewHolder.Rtext7.setBackgroundResource(R.drawable.ball2);
         return row;
 
     }

@@ -42,14 +42,13 @@ public class Main2Activity extends AppCompatActivity {
     private DatabaseHelper db;
     private ArrCom arrcom;
 
-    int tak, tok,trash;
+    int tak, tok, trash;
     SoundPool soundpool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
 
 
         soundpool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
@@ -107,28 +106,36 @@ public class Main2Activity extends AppCompatActivity {
                 String[] ClickNum = new String[6];
                 String results = "";
 
-                //이번주 로또 넘버
-                String[] thisWeekNum = Week_sixnum(Model.getWeeknum());
-                String thisBonusNum = bonus_num(Model.getWeeknum());
 
-                // 클릭한 넘버 가저와 어레이에 넣기
-                Note n = notesList.get(position);
-                String mlotnum = n.getNote();
-                mlotnum = mlotnum.replace(" ", "");
-                mlotnum = mlotnum.replace("(", ",");
-                ClickNum = mlotnum.split(",",7);
+                if (Model.getWeeknum() == null) {
+
+                    Toast.makeText(Main2Activity.this, "此号码与号码不符!", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    //이번주 로또 넘버
+                    String[] thisWeekNum = Week_sixnum(Model.getWeeknum());
+                    String thisBonusNum = bonus_num(Model.getWeeknum());
+
+                    // 클릭한 넘버 가저와 어레이에 넣기
+                    Note n = notesList.get(position);
+                    String mlotnum = n.getNote();
+                    mlotnum = mlotnum.replace(" ", "");
+                    mlotnum = mlotnum.replace("(", ",");
+                    ClickNum = mlotnum.split(",", 7);
 //                                Log.d("====mlotnum====", ClickNum[5]);
 
-                //중복 check 메소드
-                results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));
+                    //중복 check 메소드
+                    results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));
 
-                if (results.equals("")) {
-                    updateNote2("此号码与号码不符。", position);
-                    Toast.makeText(Main2Activity.this, "此号码与号码不符!!", Toast.LENGTH_SHORT).show();
-                } else {
+                    if (results.equals("")) {
+                        updateNote2("此号码与号码不符。", position);
+                        Toast.makeText(Main2Activity.this, "此号码与号码不符!!", Toast.LENGTH_SHORT).show();
+                    } else {
 
-                    Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
-                    updateNote2("获奖号码:" + results + "蓝色的球:" + thisBonusNum, position);
+                        Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
+                        updateNote2("获奖号码:" + results + "蓝色的球:" + thisBonusNum, position);
+                    }
+
                 }
             }
 
@@ -144,7 +151,6 @@ public class Main2Activity extends AppCompatActivity {
         Toast.makeText(Main2Activity.this, "没有匹配号码!!", Toast.LENGTH_SHORT).show();
 
     }
-
 
 
     public Button.OnClickListener fun_clear = new View.OnClickListener() {
@@ -336,7 +342,6 @@ public class Main2Activity extends AppCompatActivity {
         week_six_num[5] = WeekNum[6];
 
         return week_six_num;
-//                Log.d("====sumnum====", temp_rnum[0]);
 
     }
 
@@ -346,7 +351,6 @@ public class Main2Activity extends AppCompatActivity {
         String[] WeekNum = Model.getWeeknum();
         String Bonus_num = "";
         Bonus_num = WeekNum[7];
-        //                Log.d("====sumnum====", temp_rnum[0]);
 
         return Bonus_num;
 

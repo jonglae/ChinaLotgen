@@ -97,13 +97,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         holder.Rtext6.setText(res[5]);
         holder.Rtext7.setText(res[6]);
 
-        holder.Rtext1.setBackgroundResource(R.drawable.ball4);
-        holder.Rtext2.setBackgroundResource(R.drawable.ball4);
-        holder.Rtext3.setBackgroundResource(R.drawable.ball4);
-        holder.Rtext4.setBackgroundResource(R.drawable.ball4);
-        holder.Rtext5.setBackgroundResource(R.drawable.ball4);
-        holder.Rtext6.setBackgroundResource(R.drawable.ball4);
-        holder.Rtext7.setBackgroundResource(R.drawable.ball3);
+        holder.Rtext1.setBackgroundResource(R.drawable.ball3);
+        holder.Rtext2.setBackgroundResource(R.drawable.ball3);
+        holder.Rtext3.setBackgroundResource(R.drawable.ball3);
+        holder.Rtext4.setBackgroundResource(R.drawable.ball3);
+        holder.Rtext5.setBackgroundResource(R.drawable.ball3);
+        holder.Rtext6.setBackgroundResource(R.drawable.ball3);
+        holder.Rtext7.setBackgroundResource(R.drawable.ball2);
     }
 
     @Override

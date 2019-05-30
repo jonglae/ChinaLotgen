@@ -208,18 +208,21 @@ public class Main3Activity extends AppCompatActivity {
 
                         pbnum = pbnum.replace("[", "");
                         pbnum = pbnum.replace("]", "");
+                        pbnum = pbnum.replace(" ", "");
+
 
                         pbnum2 = pbnum2.replace("[", "");
                         pbnum2 = pbnum2.replace("]", "");
+                        pbnum2 = pbnum2.replace(" ", "");
 
 
 
-                        pbnum = pbnum + " (" + pbnum2 + ")";
+                        pbnum = pbnum + "," + pbnum2;
 
                         Card card = new Card("第"+LottoCount + "号码已保存。", pbnum, "", "", "", "");
 
                         //DB 입력
-                        db.insertNote(pbnum);
+                        db.insertNote(pbnum,"手动选择");
 
 
                         cardArrayAdapter.add(card);

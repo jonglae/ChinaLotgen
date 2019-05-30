@@ -36,9 +36,18 @@
             layout="@layout/content_main"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.1"
+            android:layout_weight="1"
             android:background="#3A3939"
             tools:ignore="InefficientWeight" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/ripple_save"
+            android:text="列出一切清楚(Click)"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"

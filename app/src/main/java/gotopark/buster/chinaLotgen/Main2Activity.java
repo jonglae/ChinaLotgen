@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +14,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
     private DatabaseHelper db;
     private ArrCom arrcom;
 
-    int tak, tok;
+    int tak, tok,trash;
     SoundPool soundpool;
 
     @Override
@@ -53,12 +55,16 @@ public class Main2Activity extends AppCompatActivity {
         soundpool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         tak = soundpool.load(this, R.raw.short_click2, 1);
         tok = soundpool.load(this, R.raw.click1_rebert1, 1);
+        trash = soundpool.load(this, R.raw.trashbin, 1);
+
 
 //        CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         noNotesView = findViewById(R.id.empty_notes_view);
 
         TextView toolbar = findViewById(R.id.saveTitle);
+        Button btn1 = findViewById(R.id.btn_clear);
+
         toolbar.setText("双色球号码列表");
 
 //        Model model = new Model();
@@ -67,6 +73,7 @@ public class Main2Activity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         notesList.addAll(db.getAllNotes());
+        btn1.setOnClickListener(fun_clear);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -138,27 +145,20 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-    /**
-     * Inserting new note in db
-     * and refreshing the list
-     */
-    private void createNote(String note, String alot) {
-        // inserting note in db and getting
-        // newly inserted note id
-        long id = db.insertColumn(note, alot);
-        // get the newly inserted note from db
-        Note n = db.getNote(id);
 
-        if (n != null) {
-            // adding new note to array list at 0 position
-            notesList.add(0, n);
 
-            // refreshing the list
-            mAdapter.notifyDataSetChanged();
+    public Button.OnClickListener fun_clear = new View.OnClickListener() {
 
-            toggleEmptyNotes();
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onClick(View v) {
+            soundpool.play(trash, 1, 1, 0, 0, 1);
+            for (int i = 0; i < db.getNotesCount(); i++) {
+                soundpool.play(trash, 1, 1, 0, 0, 1);
+                deleteNote(i);
+            }
         }
-    }
+    };
 
     /**
      * Updating note in db and updating

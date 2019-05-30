@@ -251,8 +251,7 @@ public class MainActivity extends AppCompatActivity {
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
         ctext7 = Balltxt7.getText().toString();
-        ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 +
-                "  (" + ctext7 + ")";
+        ctextRlist = ctext1 + "," + ctext2 + "," + ctext3 + "," + ctext4 + "," + ctext5 + "," + ctext6 +"," + ctext7;
         ctextR = App_Share + ctextRlist + "\n" + App_links1;
     }
 
@@ -411,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
             soundpool.play(tok, 1, 1, 1, 0, 1);
             if (ClickCount == 0) {
                 LotCOPY();
-                db.insertColumn(ctextRlist, "");
+                db.insertNote(ctextRlist, "AUTO");
                 ClickCount = 1;
                 String Mesg1 = "保存号码已完成";
                 //The number has been saved.

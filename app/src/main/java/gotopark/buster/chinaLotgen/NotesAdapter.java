@@ -24,40 +24,46 @@ import java.util.List;
 import gotopark.buster.chinaLotgen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
-    private Context context;
 
     private List<Note> notesList;
 
-    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView note;
         TextView dot;
         TextView timestamp;
         TextView lstext1;
+        TextView MAgroup;
 
+        TextView Rtext1;
+        TextView Rtext2;
+        TextView Rtext3;
+        TextView Rtext4;
+        TextView Rtext5;
+        TextView Rtext6;
+        TextView Rtext7;
 
         MyViewHolder(View view) {
             super(view);
 
-            note = view.findViewById(R.id.note);
+
             dot = view.findViewById(R.id.dot);
             lstext1 = view.findViewById(R.id.lsttxt1);
+            MAgroup = view.findViewById(R.id.MAgroup);
             timestamp = view.findViewById(R.id.timestamp);
-        }
 
-        @RequiresApi(api = Build.VERSION_CODES.N)
-        @Override
-        public void onClick(View v) {
-
+            Rtext1 = view.findViewById(R.id.Rtext1);
+            Rtext2 = view.findViewById(R.id.Rtext2);
+            Rtext3 = view.findViewById(R.id.Rtext3);
+            Rtext4 = view.findViewById(R.id.Rtext4);
+            Rtext5 = view.findViewById(R.id.Rtext5);
+            Rtext6 = view.findViewById(R.id.Rtext6);
+            Rtext7 = view.findViewById(R.id.Rtext7);
         }
     }
 
-    // 이곳이 매우 중요한 부분
+
     NotesAdapter(Context context, List<Note> notesList) {
         this.notesList = notesList;
-
-        // 이곳이 매우 중요한 부분 context 가 되는지 확인 되는 부분
-        this.context = context;
     }
 
     @NonNull
@@ -72,17 +78,32 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Note note = notesList.get(position);
+        String[] res = note.getNote().split(",");
 
-        holder.note.setText(note.getNote());
         holder.lstext1.setText(note.getAlot());
 
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));
+        holder.MAgroup.setText(note.getMagroup());
 
         // Formatting and displaying timestamp
         holder.timestamp.setText(formatDate(note.getTimestamp()));
 
+        holder.Rtext1.setText(res[0]);
+        holder.Rtext2.setText(res[1]);
+        holder.Rtext3.setText(res[2]);
+        holder.Rtext4.setText(res[3]);
+        holder.Rtext5.setText(res[4]);
+        holder.Rtext6.setText(res[5]);
+        holder.Rtext7.setText(res[6]);
 
+        holder.Rtext1.setBackgroundResource(R.drawable.ball4);
+        holder.Rtext2.setBackgroundResource(R.drawable.ball4);
+        holder.Rtext3.setBackgroundResource(R.drawable.ball4);
+        holder.Rtext4.setBackgroundResource(R.drawable.ball4);
+        holder.Rtext5.setBackgroundResource(R.drawable.ball4);
+        holder.Rtext6.setBackgroundResource(R.drawable.ball4);
+        holder.Rtext7.setBackgroundResource(R.drawable.ball3);
     }
 
     @Override

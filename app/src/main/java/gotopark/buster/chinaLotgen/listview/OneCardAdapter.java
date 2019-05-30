@@ -67,7 +67,7 @@ public class OneCardAdapter extends ArrayAdapter<Card> {
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View row = convertView;
         CardViewHolder viewHolder;
-        String[] Lotnum = new String[6];
+        String[] Lotnum = new String[7];
         String sLotnum;
 
         if (row == null) {
@@ -110,11 +110,6 @@ public class OneCardAdapter extends ArrayAdapter<Card> {
 
         assert card != null;
         viewHolder.line1.setText(card.getLine1());
-//        viewHolder.line2.setText(card.getLine2());
-//        viewHolder.line3.setText(card.getLine3());
-
-//        viewHolder.line3.setTextColor(Color.parseColor("#27af3c"));
-//        viewHolder.line3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
 
         viewHolder.Rtext1.setText(Lotnum[0]);
         viewHolder.Rtext2.setText(Lotnum[1]);

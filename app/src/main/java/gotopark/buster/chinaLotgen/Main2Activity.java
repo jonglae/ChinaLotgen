@@ -101,7 +101,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view, final int position) {
 
-                soundpool.play(tok, 1, 1, 1, 0, 1);
+                soundpool.play(tok, 1, 1, 0, 0, 1);
 
                 String[] ClickNum = new String[6];
                 String results = "";
@@ -237,7 +237,7 @@ public class Main2Activity extends AppCompatActivity {
                 if (which == 1) {
                     showNoteDialog(true, notesList.get(position), position);
                 } else {
-                    soundpool.play(tok, 1, 1, 1, 0, 1);
+                    soundpool.play(tok, 1, 1, 0, 0, 1);
                     deleteNote(position);
                 }
             }

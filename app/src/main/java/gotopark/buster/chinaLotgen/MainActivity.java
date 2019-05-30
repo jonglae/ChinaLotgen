@@ -407,6 +407,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button.OnClickListener Lot_save = new View.OnClickListener() {
 
+        @SuppressLint("SetTextI18n")
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
@@ -473,8 +474,9 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd.loadAd(adRequest);
     }
 
+    //버젼 ver : 1.0
     public void Show_front() {
-        if (mInterstitialAd.isLoaded()) {
+        if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
         }
     }

@@ -307,6 +307,16 @@ public class MainActivity extends AppCompatActivity {
         Balltxt7 = findViewById(R.id.balltext7);
 
 
+        Balltxt1.setBackgroundResource(R.drawable.ball3);
+        Balltxt2.setBackgroundResource(R.drawable.ball3);
+        Balltxt3.setBackgroundResource(R.drawable.ball3);
+        Balltxt4.setBackgroundResource(R.drawable.ball3);
+        Balltxt5.setBackgroundResource(R.drawable.ball3);
+        Balltxt6.setBackgroundResource(R.drawable.ball3);
+        Balltxt7.setBackgroundResource(R.drawable.ball2);
+
+
+
         Rtext1 = findViewById(R.id.Rtext1);
         Rtext2 = findViewById(R.id.Rtext2);
         Rtext3 = findViewById(R.id.Rtext3);

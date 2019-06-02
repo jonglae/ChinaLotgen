@@ -70,12 +70,12 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:shadowColor="@android:color/darker_gray"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="4"
                 android:shadowDy="4"
                 android:shadowRadius="1.4"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -86,12 +86,12 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:shadowColor="@android:color/darker_gray"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="4"
                 android:shadowDy="4"
                 android:shadowRadius="1.4"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -102,12 +102,12 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:shadowColor="@android:color/darker_gray"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="4"
                 android:shadowDy="4"
                 android:shadowRadius="1.4"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -118,12 +118,12 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:shadowColor="@android:color/darker_gray"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="4"
                 android:shadowDy="4"
                 android:shadowRadius="1.4"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -134,12 +134,12 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:shadowColor="@android:color/darker_gray"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="4"
                 android:shadowDy="4"
                 android:shadowRadius="1.4"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -150,12 +150,12 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:shadowColor="@android:color/white"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="1.2"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -165,12 +165,12 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:shadowColor="@android:color/white"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="1.2"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

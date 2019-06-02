@@ -76,15 +76,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView Rtext7;
     private TextView Rtext8;
 
-
-    private ImageView RBall1;
-    private ImageView RBall2;
-    private ImageView RBall3;
-    private ImageView RBall4;
-    private ImageView RBall5;
-    private ImageView RBall6;
-    private ImageView RBall8;
-
     private TextView Rtilte;
 
     private InterstitialAd mInterstitialAd;
@@ -332,18 +323,6 @@ public class MainActivity extends AppCompatActivity {
         Button btn5 = findViewById(R.id.button5);
         Button btn6 = findViewById(R.id.button6);
         Button btn7 = findViewById(R.id.button7);
-
-        //========================================================================
-
-        RBall1 = findViewById(R.id.RBall1);
-        RBall2 = findViewById(R.id.RBall2);
-        RBall3 = findViewById(R.id.RBall3);
-        RBall4 = findViewById(R.id.RBall4);
-        RBall5 = findViewById(R.id.RBall5);
-        RBall6 = findViewById(R.id.RBall6);
-        RBall8 = findViewById(R.id.RBall8);
-
-        //========================================================================
 
         Rtilte = findViewById(R.id.rtitle);
         sw1 = findViewById(R.id.switch1);
@@ -655,13 +634,13 @@ public class MainActivity extends AppCompatActivity {
                 Rtilte.setText(F10_1);
 
                 //당첨번호 표시
-                RBall1.setImageResource(R.drawable.ball3);
-                RBall2.setImageResource(R.drawable.ball3);
-                RBall3.setImageResource(R.drawable.ball3);
-                RBall4.setImageResource(R.drawable.ball3);
-                RBall5.setImageResource(R.drawable.ball3);
-                RBall6.setImageResource(R.drawable.ball3);
-                RBall8.setImageResource(R.drawable.ball2);
+                Rtext1.setBackgroundResource(R.drawable.ball3);
+                Rtext2.setBackgroundResource(R.drawable.ball3);
+                Rtext3.setBackgroundResource(R.drawable.ball3);
+                Rtext4.setBackgroundResource(R.drawable.ball3);
+                Rtext5.setBackgroundResource(R.drawable.ball3);
+                Rtext6.setBackgroundResource(R.drawable.ball3);
+                Rtext8.setBackgroundResource(R.drawable.ball2);
 
                 Rtext1.setText(String.valueOf(aF11_1[1]));
                 Rtext2.setText(String.valueOf(aF11_1[2]));

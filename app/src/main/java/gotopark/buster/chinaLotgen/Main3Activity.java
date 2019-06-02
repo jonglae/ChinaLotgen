@@ -83,6 +83,7 @@ public class Main3Activity extends AppCompatActivity {
         adapter2 = new GridViewAdapter(numbers2, this);
 
         View btnGo = findViewById(id.button);
+        View btnClear = findViewById(id.button2);
 
         selectedStrings = new ArrayList<>();
         selectedStrings_star2 = new ArrayList<>();
@@ -140,6 +141,23 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
+
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            @Override
+            public void onClick(View v) {
+                soundpool.play(tok, 1, 1, 0, 0, 1);
+
+                adapter.selectedPositions.clear();
+                selectedStrings.clear();
+                adapter.notifyDataSetChanged();
+
+                adapter2.selectedPositions.clear();
+                selectedStrings_star2.clear();
+                adapter2.notifyDataSetChanged();
+
+            }
+        });
 
         gridView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @SuppressLint("SetTextI18n")

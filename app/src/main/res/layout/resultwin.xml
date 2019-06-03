@@ -346,4 +346,18 @@
         app:autoSizeMaxTextSize="16dp"
         app:autoSizeMinTextSize="12dp" />
 
+    <TextView
+        android:id="@+id/stackMony3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.2"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:autoSizeMaxTextSize="14dp"
+        app:autoSizeMinTextSize="12dp" />
+
 </LinearLayout>

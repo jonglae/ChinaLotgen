@@ -53,6 +53,7 @@ import gotopark.buster.chinaLotgen.Module.numtoimg;
 import gotopark.buster.chinaLotgen.Module.randomNum;
 import gotopark.buster.chinaLotgen.database.DatabaseHelper;
 import gotopark.buster.chinaLotgen.qrCodeReader.FullScannerFragmentActivity;
+import kotlin.jvm.functions.Function16;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -306,7 +307,6 @@ public class MainActivity extends AppCompatActivity {
         Balltxt6 = findViewById(R.id.balltext6);
         Balltxt7 = findViewById(R.id.balltext7);
 
-
         Balltxt1.setBackgroundResource(R.drawable.ball3);
         Balltxt2.setBackgroundResource(R.drawable.ball3);
         Balltxt3.setBackgroundResource(R.drawable.ball3);
@@ -314,8 +314,6 @@ public class MainActivity extends AppCompatActivity {
         Balltxt5.setBackgroundResource(R.drawable.ball3);
         Balltxt6.setBackgroundResource(R.drawable.ball3);
         Balltxt7.setBackgroundResource(R.drawable.ball2);
-
-
 
         Rtext1 = findViewById(R.id.Rtext1);
         Rtext2 = findViewById(R.id.Rtext2);
@@ -521,6 +519,7 @@ public class MainActivity extends AppCompatActivity {
         Elements F13;
         String F14;
         String F15;
+        String F16;
         String tiTle;
 
         @Override
@@ -573,6 +572,7 @@ public class MainActivity extends AppCompatActivity {
                 F13 = document.select(getString(R.string.jsoup_q4));
                 F14 = String.valueOf(document.select(getString(R.string.jsoup_q5)));
                 F15 = String.valueOf(document.select(getString(R.string.jsoup_q6)));
+                F16 = String.valueOf(document.select(getString(R.string.jsoup_q7)));
 
 
             } catch (IOException e) {
@@ -594,6 +594,7 @@ public class MainActivity extends AppCompatActivity {
 
             TextView stackMony1;
             TextView stackMony2;
+            TextView stackMony3;
 
 
             rowview1 = findViewById(R.id.rowview1);
@@ -614,6 +615,7 @@ public class MainActivity extends AppCompatActivity {
 
             stackMony1 = findViewById(R.id.stackMony1);
             stackMony2 = findViewById(R.id.stackMony2);
+            stackMony3 = findViewById(R.id.stackMony3);
 
 
             if (tiTle != null) {
@@ -638,6 +640,7 @@ public class MainActivity extends AppCompatActivity {
                 // 당첨 누적액
                 String nowsell_mony = F14.replaceAll("\\<.*?>", "");
                 String next1won = F15.replaceAll("\\<.*?>", "");
+                F16 = F16.replaceAll("\\<.*?>", "");
                 //Impresion
 
                 LotDate = F10_1;
@@ -696,8 +699,9 @@ public class MainActivity extends AppCompatActivity {
                 rowview14.setText(aF12_1[13]);
                 rowview15.setText(aF12_1[14]);
 
-                stackMony1.setText("本期销售额：" + nowsell_mony + "元");
-                stackMony2.setText("下期一等奖奖池累计金额：" + next1won + "元");
+                stackMony1.setText("本期销售额 ：" + nowsell_mony + "元");
+                stackMony2.setText("下期一等奖奖池累计金额 ：" + next1won + "元");
+                stackMony3.setText("一等奖中出情况 ：" + F16);
             } else {
                 /** 네트웍 품질 문제 발생시 메세지 출력 */
                 Rtilte.setText(getString(R.string.net_Info1));

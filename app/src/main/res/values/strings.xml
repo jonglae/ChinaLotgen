@@ -67,6 +67,7 @@
     <string name="jsoup_q5">.xqzy .xse</string>
     // 下期一等奖奖池累计金额： 다음 상금 1 등상
     <string name="jsoup_q6">.xqzy .jchi</string>
+    <string name="jsoup_q7">.ydjzc</string>
 
 
     //network Error Message

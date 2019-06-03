@@ -53,7 +53,6 @@ import gotopark.buster.chinaLotgen.Module.numtoimg;
 import gotopark.buster.chinaLotgen.Module.randomNum;
 import gotopark.buster.chinaLotgen.database.DatabaseHelper;
 import gotopark.buster.chinaLotgen.qrCodeReader.FullScannerFragmentActivity;
-import kotlin.jvm.functions.Function16;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -352,19 +351,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 soundpool.play(tak, 10, 10, 1, 0, 0);
-
                 if (sw2.isChecked()) {
-
                     MultiClick = 1;
-//                Model.setClick(MultiClick);
-
                 } else {
-
                     MultiClick = 0;
-//                    Model.setClick(MultiClick);
-
                 }
-
             }
         });
 

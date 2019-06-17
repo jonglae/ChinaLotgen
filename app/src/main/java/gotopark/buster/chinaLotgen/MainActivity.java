@@ -26,17 +26,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -45,10 +47,12 @@ import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
+
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+
 import gotopark.buster.chinaLotgen.Module.numtoimg;
 import gotopark.buster.chinaLotgen.Module.randomNum;
 import gotopark.buster.chinaLotgen.database.DatabaseHelper;
@@ -134,8 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button.OnClickListener EXIT = new View.OnClickListener() {
 
-        public void onClick(View v)
-        {
+        public void onClick(View v) {
             soundpool.play(tak, 1, 1, 1, 0, 1);
             onBackPressed();
         }
@@ -187,9 +190,10 @@ public class MainActivity extends AppCompatActivity {
                 @SuppressLint("SetTextI18n")
                 public void onTick(long millisUntilFinished) {
                     soundpool.play(tak, 1, 1, 0, 0, 1);
-                    text10.setText(" - 小数分析 - " + millisUntilFinished /10 + "00ms 留。");
+                    text10.setText(" - 小数分析 - " + millisUntilFinished / 10 + "00ms 留。");
                     GenNumber();
                 }
+
                 @SuppressLint("SetTextI18n")
                 public void onFinish() {
                     text10.setText(getString(R.string.scr_text2));
@@ -223,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
     public void launchFullFragmentActivity(View v) {
         launchActivity(FullScannerFragmentActivity.class);
     }
+
     private void LotCOPY() {
         String App_links1 = getString(R.string.app_Google_Play_links);
         String App_Share = getString(R.string.app_share);
@@ -242,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
         ctext7 = Balltxt7.getText().toString();
-        ctextRlist = ctext1 + "," + ctext2 + "," + ctext3 + "," + ctext4 + "," + ctext5 + "," + ctext6 +"," + ctext7;
+        ctextRlist = ctext1 + "," + ctext2 + "," + ctext3 + "," + ctext4 + "," + ctext5 + "," + ctext6 + "," + ctext7;
         ctextR = App_Share + ctextRlist + "\n" + App_links1;
     }
 
@@ -416,7 +421,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-
     public Button.OnClickListener Num_Choice = new View.OnClickListener() {
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -434,6 +438,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
     }
+
     public void Admob_is() {
         AdView mAdView = findViewById(R.id.adView);
         MobileAds.initialize(getApplicationContext(), getString(R.string.google_banner_id));
@@ -511,7 +516,7 @@ public class MainActivity extends AppCompatActivity {
         String F14;
         String F15;
         String F16;
-        String tiTle;
+        String tiTle = null;
 
         @Override
         public Void doInBackground(Void... params) {
@@ -549,11 +554,7 @@ public class MainActivity extends AppCompatActivity {
             String url = getString(R.string.JsoupOne);
 
             try {
-
-                Document document = Jsoup.connect(url)
-                        .timeout(0)
-                        .get();
-
+                Document document = Jsoup.connect(url).get();
 
                 // Get the html document title
                 tiTle = document.title();
@@ -609,17 +610,26 @@ public class MainActivity extends AppCompatActivity {
             stackMony3 = findViewById(R.id.stackMony3);
 
 
-            if (tiTle != null) {
+            if (F10.toString() == "") {
+
+                Rtilte.setText(getString(R.string.net_Info1));
+                stackMony1.setText(getString(R.string.net_Info2));
+                stackMony2.setText(getString(R.string.net_Info3));
+
+            } else {
 
                 //추첨일
                 String F10_1 = F10.toString().replaceAll("\\<.*?>", "");
                 F10_1 = F10_1.replaceAll("\n", "");
                 F10_1 = F10_1.replaceAll(" ", "");
-
+                Log.d("=====", "======Error======" + F10_1);
+                Log.d("=====", "======Error======" + F10);
 
                 //쌍색구 번호
                 String F11_1 = F11.toString().replaceAll("\\<.*?>", "");
                 F11_1 = F11_1.replaceAll(" ", "");
+
+
                 String[] aF11_1 = F11_1.split("\n");
 
                 //당첨 정보
@@ -693,14 +703,12 @@ public class MainActivity extends AppCompatActivity {
                 stackMony1.setText("本期销售额 ：" + nowsell_mony + "元");
                 stackMony2.setText("下期一等奖奖池累计金额 ：" + next1won + "元");
                 stackMony3.setText("一等奖中出情况 ：" + F16);
-            } else {
-                /** 네트웍 품질 문제 발생시 메세지 출력 */
-                Rtilte.setText(getString(R.string.net_Info1));
-                stackMony1.setText(getString(R.string.net_Info2));
-                stackMony2.setText(getString(R.string.net_Info3));
             }
+
         }
+
     }
+
 
     @Override
     protected void onStart() {

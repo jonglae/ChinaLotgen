@@ -3,17 +3,10 @@ package gotopark.buster.chinaLotgen
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.AsyncTask
+import android.util.Log
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
 import java.io.IOException
-import java.security.KeyManagementException
-import java.security.NoSuchAlgorithmException
-import java.security.SecureRandom
-import java.security.cert.X509Certificate
-import javax.net.ssl.HttpsURLConnection
-import javax.net.ssl.SSLContext
-import javax.net.ssl.TrustManager
-import javax.net.ssl.X509TrustManager
 
 @SuppressLint("StaticFieldLeak")
 // 메인 엑티비티 텍스트 표시 접근
@@ -25,56 +18,34 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
         lateinit var activity: MainActivity
         lateinit var SUM_lotto_num: String
         lateinit var LotDate: String
+
+
     }
 
     init {
         activity = context as MainActivity
     }
 
+    //    var f13: Elements? = null
+//    var f14: Elements? = null
+//    var f15: Elements? = null
+//    var f16: Elements? = null
+//    var f17: Elements? = null
+//    var f18: Elements? = null
+    lateinit var f13: Elements
+    lateinit var f14: Elements
+    lateinit var f15: Elements
+    lateinit var f16: Elements
+    lateinit var f17: Elements
+    lateinit var f18: Elements
+    var tiTle: String? = null
 
-    private lateinit var f13: Elements
-    private lateinit var f14: Elements
-    private lateinit var f15: Elements
-    private lateinit var f16: Elements
-    private lateinit var f17: Elements
-    private lateinit var f18: Elements
-    private var tiTle: String? = null
+
 
     public override fun doInBackground(vararg params: Void): Void? {
 
-        //https 설정 ssl hanshare fail 적용 위한 code -->start
-        val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
-            override fun getAcceptedIssuers(): Array<X509Certificate?> {
-                return arrayOfNulls(0)
-            }
-
-            @SuppressLint("TrustAllX509TrustManager")
-            override fun checkClientTrusted(certs: Array<X509Certificate>, authType: String) {
-            }
-
-            @SuppressLint("TrustAllX509TrustManager")
-            override fun checkServerTrusted(certs: Array<X509Certificate>, authType: String) {
-            }
-        })
-
-        var sc: SSLContext? = null
-        try {
-            sc = SSLContext.getInstance("TLS")
-        } catch (e: NoSuchAlgorithmException) {
-            e.printStackTrace()
-        }
-
-        try {
-            assert(sc != null)
-            sc!!.init(null, trustAllCerts, SecureRandom())
-        } catch (e: KeyManagementException) {
-            e.printStackTrace()
-        }
-
-        HttpsURLConnection.setDefaultSSLSocketFactory(sc!!.socketFactory)
-        //https 설정 ssl hanshare fail 적용 위한 code --> End
-
         val url = "http://kaijiang.500.com/shtml/ssq/"
+        val url2 = "https://cp.360.cn/kj/ssq.html"
 
         try {
 
@@ -82,15 +53,18 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
                     .timeout(0)
                     .get()
 
+            val doc2 = Jsoup.connect(url2)
+                    .timeout(0)
+                    .get()
 
             // Get the html document title
-            tiTle = doc.title()
-            val f13 = doc.select(".ball_red")
-            val f14 = doc.select(".ball_blue")
-            val f15 = doc.select(".cfont1")
-            val f16 = doc.select(".kj_tablelist02 td")
-            val f17 = doc.select(".cfont2")
-            val f18 = doc.select(".span_right")
+            tiTle = doc.select("[title]").toString()
+            f13 = doc.select(".ball_red")
+            f14 = doc.select(".ball_blue")
+            f15 = doc.select(".cfont1")
+            f16 = doc.select(".kj_tablelist02 td")
+            f17 = doc.select(".cfont2")
+            f18 = doc2.select("#kaijdata")
 
 
         } catch (e: IOException) {
@@ -111,8 +85,7 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
         val SUM_lotto_num1: String
 
 
-
-        if (tiTle != null) {
+//        if (tiTle != null) {
 
 //            var KoLotto = ""
 //            for (e in F12) {
@@ -173,10 +146,17 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
             val winday = f17.toString().replace("\\<.*?>".toRegex(), "")
             val winday2 = f18.toString().replace("\\<.*?>".toRegex(), "")
             mountmony = mountmony.replace("\u052A", "")
-            println("aaa$winday")
-            println("aaa$winday2")
+        println("=========aaa$winday")
+        println("=========aaa$winday2")
             val Money = mountmony.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val areball = redball.split("\n").toTypedArray()
+
+
+        Log.d("====areball====", areball[0])
+        Log.d("====areball====", areball[1])
+        Log.d("====areball====", areball[2])
+        Log.d("====areball====", areball[3])
+        Log.d("====areball====", areball[4])
 
             lotto_num = foo(areball, blueball)
 
@@ -184,13 +164,10 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
             val res = IntArray(7)
 
 
+//            Model.setWeeknum(lotto_num)
 
 
-            Model.setWeeknum(lotto_num)
-
-
-
-            activity.Rtilte.text = winday
+        activity.Rtilte.text = "双色球 第 $winday 期\n" + winday2
 
 
             // 당첨 번호 표시
@@ -220,9 +197,11 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
             activity.Balltxt4.text = lotto_num[3].toString()
             activity.Balltxt5.text = lotto_num[4].toString()
             activity.Balltxt6.text = lotto_num[5].toString()
+        activity.Balltxt7.text = lotto_num[6].toString()
 
-
-        }
+        activity.stackMony1.text = ("本期销量：" + Money[0] + "元")
+        activity.stackMony2.text = ("奖池滚存：" + Money[1] + "元")
+//        }
     }
 
 

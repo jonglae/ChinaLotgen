@@ -731,6 +731,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Log.d("====onStart====", "");
 
         Jsoup_Lotto jsoup_lotto = new Jsoup_Lotto(this);
         jsoup_lotto.execute();

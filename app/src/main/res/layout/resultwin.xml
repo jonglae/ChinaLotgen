@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_resultwin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -168,7 +167,7 @@
                 android:id="@+id/rowview1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -177,7 +176,7 @@
                 android:id="@+id/rowview2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -186,7 +185,7 @@
                 android:id="@+id/rowview3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -200,7 +199,7 @@
                 android:id="@+id/rowview4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="#D83E0E"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -209,7 +208,7 @@
                 android:id="@+id/rowview5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="#D83E0E"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -218,7 +217,7 @@
                 android:id="@+id/rowview6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="#D83E0E"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -232,7 +231,7 @@
                 android:id="@+id/rowview7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -240,7 +239,7 @@
                 android:id="@+id/rowview8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -248,7 +247,7 @@
                 android:id="@+id/rowview9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
@@ -261,7 +260,7 @@
                 android:id="@+id/rowview10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -269,7 +268,7 @@
                 android:id="@+id/rowview11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -277,7 +276,7 @@
                 android:id="@+id/rowview12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
@@ -299,7 +298,7 @@
                 android:id="@+id/rowview14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -307,7 +306,7 @@
                 android:id="@+id/rowview15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
@@ -325,10 +324,10 @@
         android:shadowDy="3"
         android:shadowRadius="1.2"
         android:textColor="#D83E0E"
-        android:textSize="14sp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:autoSizeMaxTextSize="16dp"
-        app:autoSizeMinTextSize="12dp" />
+        app:autoSizeMaxTextSize="20dp"
+        app:autoSizeMinTextSize="16dp" />
 
     <TextView
         android:id="@+id/stackMony2"
@@ -341,10 +340,10 @@
         android:shadowDy="3"
         android:shadowRadius="1.2"
         android:textColor="#D83E0E"
-        android:textSize="14sp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:autoSizeMaxTextSize="16dp"
-        app:autoSizeMinTextSize="12dp" />
+        app:autoSizeMaxTextSize="20dp"
+        app:autoSizeMinTextSize="16dp" />
 
     <TextView
         android:id="@+id/stackMony3"

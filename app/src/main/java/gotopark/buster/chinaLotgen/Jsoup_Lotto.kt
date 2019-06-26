@@ -3,7 +3,6 @@ package gotopark.buster.chinaLotgen
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.AsyncTask
-import android.util.Log
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
 import java.io.IOException
@@ -26,12 +25,6 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
         activity = context as MainActivity
     }
 
-    //    var f13: Elements? = null
-//    var f14: Elements? = null
-//    var f15: Elements? = null
-//    var f16: Elements? = null
-//    var f17: Elements? = null
-//    var f18: Elements? = null
     lateinit var f13: Elements
     lateinit var f14: Elements
     lateinit var f15: Elements
@@ -39,7 +32,6 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
     lateinit var f17: Elements
     lateinit var f18: Elements
     var tiTle: String? = null
-
 
 
     public override fun doInBackground(vararg params: Void): Void? {
@@ -62,7 +54,7 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
             f13 = doc.select(".ball_red")
             f14 = doc.select(".ball_blue")
             f15 = doc.select(".cfont1")
-            f16 = doc.select(".kj_tablelist02 td")
+            f16 = doc2.select(".tar")
             f17 = doc.select(".cfont2")
             f18 = doc2.select("#kaijdata")
 
@@ -79,95 +71,30 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
 
 
         var lotto_num = arrayOfNulls<String>(7)
-        val LotCount: String
-        var LotWin: String
-        var prize_data: String
-        val SUM_lotto_num1: String
 
-
-//        if (tiTle != null) {
-
-//            var KoLotto = ""
-//            for (e in F12) {
-//                val alt = e.attr("alt")
-//
-//                KoLotto += ", $alt"
-//            }
-//            KoLotto = KoLotto.replace(" ".toRegex(), "")
-//
-//            KoLotto = KoLotto.substring(1)
-//            lotto_num = KoLotto.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-//            SUM_lotto_num1 = lotto_num[0] + ", " +
-//                    lotto_num[1] + ", " +
-//                    lotto_num[2] + ", " +
-//                    lotto_num[3] + ", " +
-//                    lotto_num[4] + ", " +
-//                    lotto_num[5]
-//
-//
-//            SUM_lotto_num = SUM_lotto_num1 + "\n보너스 번호 :" + lotto_num[6]
-//
-//
-//            LotCount = F10.toString().replace("\\<.*?>".toRegex(), "")
-//            LotDate = F11.toString().replace("\\<.*?>".toRegex(), "")
-//
-//            // 로또 당첨 등수
-//            LotWin = F13.toString().replace("\\<.*?>".toRegex(), "")
-//            LotWin = LotWin.replace("  ".toRegex(), "")
-//            LotWin = LotWin.replace("\n".toRegex(), "")
-//            LotWin = LotWin.replace("".toRegex(), "")
-//            LotWin = LotWin.replace("  ".toRegex(), "\n")
-//            LotWin = LotWin.replace("당첨정보 상세보기".toRegex(), "")
-//            LotWin = LotWin.replace("₩".toRegex(), " = (₩)")
-//
-//
-//            Log.e("================>", F14.toString())
-//            // 다음회차 정보
-//            var Linfo = F14.toString().replace("\\<.*?>".toRegex(), "")
-//            Linfo = Linfo.replace("\n".toRegex(), "")
-//            Log.e("1Linfo================>", Linfo)
-//
-//            Linfo = Linfo.replace("   ".toRegex(), "\n")
-//            Log.e("2Linfo===============>", Linfo)
-//
-//            Linfo = Linfo.replace("  ".toRegex(), "")
-//            Log.e("3Linfo===============>", Linfo)
-//            prize_data = F15.toString().replace("\\<.*?>".toRegex(), "")
-//            prize_data = prize_data.replace("₩".toRegex(), "")
-//            prize_data = prize_data.replace(",".toRegex(), "")
-//
-//            //                prize_data = String.valueOf(F15);
+        if (tiTle != null) {
 
 
             val redball = f13.toString().replace("\\<.*?>".toRegex(), "")
             val blueball = f14.toString().replace("\\<.*?>".toRegex(), "")
             var mountmony = f15.toString().replace("\\<.*?>".toRegex(), "")
             val table_1 = f16.toString().replace("\\<.*?>".toRegex(), "")
+            val result1 = table_1.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+
+
             val winday = f17.toString().replace("\\<.*?>".toRegex(), "")
             val winday2 = f18.toString().replace("\\<.*?>".toRegex(), "")
             mountmony = mountmony.replace("\u052A", "")
-        println("=========aaa$winday")
-        println("=========aaa$winday2")
+            println("=========aaa$winday")
+            println("=========aaa$winday2")
             val Money = mountmony.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val areball = redball.split("\n").toTypedArray()
 
-
-        Log.d("====areball====", areball[0])
-        Log.d("====areball====", areball[1])
-        Log.d("====areball====", areball[2])
-        Log.d("====areball====", areball[3])
-        Log.d("====areball====", areball[4])
+//        Log.d("====areball====", areball[0])
 
             lotto_num = foo(areball, blueball)
 
-
-            val res = IntArray(7)
-
-
-//            Model.setWeeknum(lotto_num)
-
-
-        activity.Rtilte.text = "双色球 第 $winday 期\n" + winday2
+            activity.Rtilte.text = "双色球 第 $winday 期\n" + winday2
 
 
             // 당첨 번호 표시
@@ -197,11 +124,41 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
             activity.Balltxt4.text = lotto_num[3].toString()
             activity.Balltxt5.text = lotto_num[4].toString()
             activity.Balltxt6.text = lotto_num[5].toString()
-        activity.Balltxt7.text = lotto_num[6].toString()
+            activity.Balltxt7.text = lotto_num[6].toString()
 
-        activity.stackMony1.text = ("本期销量：" + Money[0] + "元")
-        activity.stackMony2.text = ("奖池滚存：" + Money[1] + "元")
-//        }
+            SUM_lotto_num = lotto_num[0] + " ," +
+                    lotto_num[1] + " ," +
+                    lotto_num[2] + " ," +
+                    lotto_num[3] + " ," +
+                    lotto_num[4] + " ," +
+                    lotto_num[5] + "   (" +
+                    lotto_num[6] + ")";
+
+            // 로또넘버 맞추기 위해서 모델로 셋
+            Model.setWeeknum(lotto_num);
+            // 당첨된 번호 랜덤 번호 생성 부분에 표시
+            activity.rowview1.setText("奖项/中奖条件")
+            activity.rowview2.setText("全国中奖注数")
+            activity.rowview3.setText("每注奖金")
+
+
+            activity.rowview4.setText("一等奖:6+1")
+            activity.rowview5.setText(result1[3])
+            activity.rowview6.setText(result1[5])
+            activity.rowview7.setText("二等奖:6+0")
+            activity.rowview8.setText(result1[6])
+            activity.rowview9.setText(result1[8])
+            activity.rowview10.setText("三等奖:5+1")
+            activity.rowview11.setText(result1[9])
+            activity.rowview12.setText(result1[11])
+            activity.rowview13.setText("四等奖:5+0/4+1")
+            activity.rowview14.setText(result1[12])
+            activity.rowview15.setText(result1[14])
+
+
+            activity.stackMony1.text = ("本期销量：" + Money[0] + "元")
+            activity.stackMony2.text = ("奖池滚存：" + Money[1] + "元")
+        }
     }
 
 

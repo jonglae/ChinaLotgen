@@ -334,12 +334,12 @@ public class Main2Activity extends AppCompatActivity {
         String[] WeekNum = Model.getWeeknum();
         String[] week_six_num = new String[6];
 
-        week_six_num[0] = WeekNum[1];
-        week_six_num[1] = WeekNum[2];
-        week_six_num[2] = WeekNum[3];
-        week_six_num[3] = WeekNum[4];
-        week_six_num[4] = WeekNum[5];
-        week_six_num[5] = WeekNum[6];
+        week_six_num[0] = WeekNum[0];
+        week_six_num[1] = WeekNum[1];
+        week_six_num[2] = WeekNum[2];
+        week_six_num[3] = WeekNum[3];
+        week_six_num[4] = WeekNum[4];
+        week_six_num[5] = WeekNum[5];
 
         return week_six_num;
 
@@ -350,7 +350,7 @@ public class Main2Activity extends AppCompatActivity {
 
         String[] WeekNum = Model.getWeeknum();
         String Bonus_num = "";
-        Bonus_num = WeekNum[7];
+        Bonus_num = WeekNum[6];
 
         return Bonus_num;
 

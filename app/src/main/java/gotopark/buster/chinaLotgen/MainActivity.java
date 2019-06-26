@@ -14,7 +14,6 @@ import android.media.SoundPool;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -35,23 +34,8 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.cert.X509Certificate;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
-
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
 
 import gotopark.buster.chinaLotgen.Module.numtoimg;
 import gotopark.buster.chinaLotgen.Module.randomNum;
@@ -63,30 +47,28 @@ public class MainActivity extends AppCompatActivity {
 
     public TextView text1;
     public TextView text10;
-    private TextView Balltxt1;
-    private TextView Balltxt2;
-    private TextView Balltxt3;
-    private TextView Balltxt4;
-    private TextView Balltxt5;
-    private TextView Balltxt6;
-    private TextView Balltxt7;
-
-    private TextView Rtext1;
-    private TextView Rtext2;
-    private TextView Rtext3;
-    private TextView Rtext4;
-    private TextView Rtext5;
-    private TextView Rtext6;
-    private TextView Rtext7;
-    private TextView Rtext8;
-
-    private TextView Rtilte;
+    @SuppressLint("StaticFieldLeak")
+    public static Context CONTEXT;
+    public TextView Balltxt1;
+    public TextView Balltxt2;
+    public TextView Balltxt3;
+    public TextView Balltxt4;
+    public TextView Balltxt5;
+    public TextView Balltxt6;
+    public TextView Balltxt7;
+    public TextView Rtext1;
+    public TextView Rtext2;
+    public TextView Rtext3;
+    public TextView Rtext4;
+    public TextView Rtext5;
+    public TextView Rtext6;
+    public TextView Rtext7;
+    public TextView Rtext8;
 
     private InterstitialAd mInterstitialAd;
 
     private Switch sw1, sw2;
-
-    public Model model;
+    public TextView Rtilte;
     BackProcessHandler backHandler;
     DatabaseHelper db;
 
@@ -101,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
 
     int tak, tok;
     SoundPool soundpool;
+    public Model model;
+    public TextView rowview1, rowview2, rowview3;
+    public TextView rowview4, rowview5, rowview6;
+    public TextView rowview7, rowview8, rowview9;
+    public TextView rowview10, rowview11, rowview12;
+    public TextView rowview13, rowview14, rowview15;
+    public TextView stackMony1;
+    public TextView stackMony2;
+    public TextView stackMony3;
 
     private static final int ZXING_CAMERA_PERMISSION = 1;
 
@@ -257,6 +248,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        CONTEXT = this;
+
+
         model = new Model();
 
         db = new DatabaseHelper(this);
@@ -298,7 +293,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        new LotonumCall().execute();
 
         text1 = findViewById(R.id.text1);
         text10 = findViewById(R.id.text10);
@@ -344,6 +338,29 @@ public class MainActivity extends AppCompatActivity {
          * 시작시 메세지 출력
          *
          * */
+
+
+        rowview1 = findViewById(R.id.rowview1);
+        rowview2 = findViewById(R.id.rowview2);
+        rowview3 = findViewById(R.id.rowview3);
+        rowview4 = findViewById(R.id.rowview4);
+        rowview5 = findViewById(R.id.rowview5);
+        rowview6 = findViewById(R.id.rowview6);
+        rowview7 = findViewById(R.id.rowview7);
+        rowview8 = findViewById(R.id.rowview8);
+        rowview9 = findViewById(R.id.rowview9);
+        rowview10 = findViewById(R.id.rowview10);
+        rowview11 = findViewById(R.id.rowview11);
+        rowview12 = findViewById(R.id.rowview12);
+        rowview13 = findViewById(R.id.rowview13);
+        rowview14 = findViewById(R.id.rowview14);
+        rowview15 = findViewById(R.id.rowview15);
+
+        stackMony1 = findViewById(R.id.stackMony1);
+        stackMony2 = findViewById(R.id.stackMony2);
+        stackMony3 = findViewById(R.id.stackMony3);
+
+
         String versionCode = BuildConfig.VERSION_NAME;
         String App_Mame = getString(R.string.app_name);
         text1.setText(getString(R.string.info_Mess));
@@ -506,213 +523,219 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @SuppressLint("StaticFieldLeak")
-    public class LotonumCall extends AsyncTask<Void, Void, Void> {
-
-        Elements F10;
-        Elements F11;
-        Elements F12;
-        Elements F13;
-        String F14;
-        String F15;
-        String F16;
-        String tiTle = null;
-
-        @Override
-        public Void doInBackground(Void... params) {
-
-//https 설정 ssl hanshare fail 적용 위한 code -->start
-            TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
-                public X509Certificate[] getAcceptedIssuers() {
-                    return new X509Certificate[0];
-                }
-
-                @SuppressLint("TrustAllX509TrustManager")
-                public void checkClientTrusted(X509Certificate[] certs, String authType) {
-                }
-
-                @SuppressLint("TrustAllX509TrustManager")
-                public void checkServerTrusted(X509Certificate[] certs, String authType) {
-                }
-            }};
-
-            SSLContext sc = null;
-            try {
-                sc = SSLContext.getInstance("TLS");
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            }
-            try {
-                assert sc != null;
-                sc.init(null, trustAllCerts, new SecureRandom());
-            } catch (KeyManagementException e) {
-                e.printStackTrace();
-            }
-            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-//https 설정 ssl hanshare fail 적용 위한 code --> End
-
-            String url = getString(R.string.JsoupOne);
-
-            try {
-                Document document = Jsoup.connect(url).get();
-
-                // Get the html document title
-                tiTle = document.title();
-                F10 = document.select(getString(R.string.jsoup_q1));
-                F11 = document.select(getString(R.string.jsoup_q2));
-                F12 = document.select(getString(R.string.jsoup_q3));
-                F13 = document.select(getString(R.string.jsoup_q4));
-                F14 = String.valueOf(document.select(getString(R.string.jsoup_q5)));
-                F15 = String.valueOf(document.select(getString(R.string.jsoup_q6)));
-                F16 = String.valueOf(document.select(getString(R.string.jsoup_q7)));
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @SuppressLint("SetTextI18n")
-        @Override
-        public void onPostExecute(Void result) {
-
-
-            TextView rowview1, rowview2, rowview3;
-            TextView rowview4, rowview5, rowview6;
-            TextView rowview7, rowview8, rowview9;
-            TextView rowview10, rowview11, rowview12;
-            TextView rowview13, rowview14, rowview15;
-
-            TextView stackMony1;
-            TextView stackMony2;
-            TextView stackMony3;
-
-
-            rowview1 = findViewById(R.id.rowview1);
-            rowview2 = findViewById(R.id.rowview2);
-            rowview3 = findViewById(R.id.rowview3);
-            rowview4 = findViewById(R.id.rowview4);
-            rowview5 = findViewById(R.id.rowview5);
-            rowview6 = findViewById(R.id.rowview6);
-            rowview7 = findViewById(R.id.rowview7);
-            rowview8 = findViewById(R.id.rowview8);
-            rowview9 = findViewById(R.id.rowview9);
-            rowview10 = findViewById(R.id.rowview10);
-            rowview11 = findViewById(R.id.rowview11);
-            rowview12 = findViewById(R.id.rowview12);
-            rowview13 = findViewById(R.id.rowview13);
-            rowview14 = findViewById(R.id.rowview14);
-            rowview15 = findViewById(R.id.rowview15);
-
-            stackMony1 = findViewById(R.id.stackMony1);
-            stackMony2 = findViewById(R.id.stackMony2);
-            stackMony3 = findViewById(R.id.stackMony3);
-
-
-            if (F10.toString() == "") {
-
-                Rtilte.setText(getString(R.string.net_Info1));
-                stackMony1.setText(getString(R.string.net_Info2));
-                stackMony2.setText(getString(R.string.net_Info3));
-
-            } else {
-
-                //추첨일
-                String F10_1 = F10.toString().replaceAll("\\<.*?>", "");
-                F10_1 = F10_1.replaceAll("\n", "");
-                F10_1 = F10_1.replaceAll(" ", "");
-                Log.d("=====", "======Error======" + F10_1);
-                Log.d("=====", "======Error======" + F10);
-
-                //쌍색구 번호
-                String F11_1 = F11.toString().replaceAll("\\<.*?>", "");
-                F11_1 = F11_1.replaceAll(" ", "");
-
-
-                String[] aF11_1 = F11_1.split("\n");
-
-                //당첨 정보
-                String F12_1 = F13.toString().replaceAll("\\<.*?>", "");
-                String[] aF12_1 = F12_1.split("\n");
-
-                Log.d("==============", Arrays.toString(aF12_1));
-
-                // 당첨 누적액
-                String nowsell_mony = F14.replaceAll("\\<.*?>", "");
-                String next1won = F15.replaceAll("\\<.*?>", "");
-                F16 = F16.replaceAll("\\<.*?>", "");
-                //Impresion
-
-                LotDate = F10_1;
-                Rtilte.setText(F10_1);
-
-                //당첨번호 표시
-                Rtext1.setBackgroundResource(R.drawable.ball3);
-                Rtext2.setBackgroundResource(R.drawable.ball3);
-                Rtext3.setBackgroundResource(R.drawable.ball3);
-                Rtext4.setBackgroundResource(R.drawable.ball3);
-                Rtext5.setBackgroundResource(R.drawable.ball3);
-                Rtext6.setBackgroundResource(R.drawable.ball3);
-                Rtext8.setBackgroundResource(R.drawable.ball2);
-
-                Rtext1.setText(String.valueOf(aF11_1[1]));
-                Rtext2.setText(String.valueOf(aF11_1[2]));
-                Rtext3.setText(String.valueOf(aF11_1[3]));
-                Rtext4.setText(String.valueOf(aF11_1[4]));
-                Rtext5.setText(String.valueOf(aF11_1[5]));
-                Rtext6.setText(String.valueOf(aF11_1[6]));
-                Rtext7.setText("+");
-                Rtext8.setText(String.valueOf(aF11_1[7]));
-
-                SUM_lotto_num = aF11_1[1] + " ," +
-                        aF11_1[2] + " ," +
-                        aF11_1[3] + " ," +
-                        aF11_1[4] + " ," +
-                        aF11_1[5] + " ," +
-                        aF11_1[6] + "   (" +
-                        aF11_1[7] + ")";
-
-                // 로또넘버 맞추기 위해서 모델로 셋
-                Model.setWeeknum(aF11_1);
-                // 당첨된 번호 랜덤 번호 생성 부분에 표시
-                Balltxt1.setText(String.valueOf(aF11_1[1]));
-                Balltxt2.setText(String.valueOf(aF11_1[2]));
-                Balltxt3.setText(String.valueOf(aF11_1[3]));
-                Balltxt4.setText(String.valueOf(aF11_1[4]));
-                Balltxt5.setText(String.valueOf(aF11_1[5]));
-                Balltxt6.setText(String.valueOf(aF11_1[6]));
-                Balltxt7.setText(String.valueOf(aF11_1[7]));
-
-                rowview1.setText(aF12_1[0]);
-                rowview2.setText(aF12_1[1]);
-                rowview3.setText(aF12_1[2]);
-                rowview4.setText(aF12_1[3]);
-                rowview5.setText(aF12_1[4]);
-                rowview6.setText(aF12_1[5]);
-                rowview7.setText(aF12_1[6]);
-                rowview8.setText(aF12_1[7]);
-                rowview9.setText(aF12_1[8]);
-                rowview10.setText(aF12_1[9]);
-                rowview11.setText(aF12_1[10]);
-                rowview12.setText(aF12_1[11]);
-                rowview13.setText(aF12_1[12]);
-                rowview14.setText(aF12_1[13]);
-                rowview15.setText(aF12_1[14]);
-
-                stackMony1.setText("本期销售额 ：" + nowsell_mony + "元");
-                stackMony2.setText("下期一等奖奖池累计金额 ：" + next1won + "元");
-                stackMony3.setText("一等奖中出情况 ：" + F16);
-            }
-
-        }
-
-    }
+//    @SuppressLint("StaticFieldLeak")
+//    public class LotonumCall extends AsyncTask<Void, Void, Void> {
+//
+//        Elements F10;
+//        Elements F11;
+//        Elements F12;
+//        Elements F13;
+//        String F14;
+//        String F15;
+//        String F16;
+//        String tiTle = null;
+//
+//        @Override
+//        public Void doInBackground(Void... params) {
+//
+////https 설정 ssl hanshare fail 적용 위한 code -->start
+//            TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+//                public X509Certificate[] getAcceptedIssuers() {
+//                    return new X509Certificate[0];
+//                }
+//
+//                @SuppressLint("TrustAllX509TrustManager")
+//                public void checkClientTrusted(X509Certificate[] certs, String authType) {
+//                }
+//
+//                @SuppressLint("TrustAllX509TrustManager")
+//                public void checkServerTrusted(X509Certificate[] certs, String authType) {
+//                }
+//            }};
+//
+//            SSLContext sc = null;
+//            try {
+//                sc = SSLContext.getInstance("TLS");
+//            } catch (NoSuchAlgorithmException e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                assert sc != null;
+//                sc.init(null, trustAllCerts, new SecureRandom());
+//            } catch (KeyManagementException e) {
+//                e.printStackTrace();
+//            }
+//            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+////https 설정 ssl hanshare fail 적용 위한 code --> End
+//
+//            String url = getString(R.string.JsoupOne);
+//
+//            try {
+////                Document document = Jsoup.connect(url).get();
+//                Document document = Jsoup.parse(new URL(url).openStream(), "ISO-8859-1", url);
+//
+//                // Get the html document title
+//                tiTle = document.title();
+//                F10 = document.select(getString(R.string.jsoup_q1));
+//                F11 = document.select(getString(R.string.jsoup_q2));
+//                F12 = document.select(getString(R.string.jsoup_q3));
+//                F13 = document.select(getString(R.string.jsoup_q4));
+//                F14 = String.valueOf(document.select(getString(R.string.jsoup_q5)));
+//                F15 = String.valueOf(document.select(getString(R.string.jsoup_q6)));
+//                F16 = String.valueOf(document.select(getString(R.string.jsoup_q7)));
+//
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+//
+//        @SuppressLint("SetTextI18n")
+//        @Override
+//        public void onPostExecute(Void result) {
+//
+//
+//            TextView rowview1, rowview2, rowview3;
+//            TextView rowview4, rowview5, rowview6;
+//            TextView rowview7, rowview8, rowview9;
+//            TextView rowview10, rowview11, rowview12;
+//            TextView rowview13, rowview14, rowview15;
+//
+//            TextView stackMony1;
+//            TextView stackMony2;
+//            TextView stackMony3;
+//
+//
+//            rowview1 = findViewById(R.id.rowview1);
+//            rowview2 = findViewById(R.id.rowview2);
+//            rowview3 = findViewById(R.id.rowview3);
+//            rowview4 = findViewById(R.id.rowview4);
+//            rowview5 = findViewById(R.id.rowview5);
+//            rowview6 = findViewById(R.id.rowview6);
+//            rowview7 = findViewById(R.id.rowview7);
+//            rowview8 = findViewById(R.id.rowview8);
+//            rowview9 = findViewById(R.id.rowview9);
+//            rowview10 = findViewById(R.id.rowview10);
+//            rowview11 = findViewById(R.id.rowview11);
+//            rowview12 = findViewById(R.id.rowview12);
+//            rowview13 = findViewById(R.id.rowview13);
+//            rowview14 = findViewById(R.id.rowview14);
+//            rowview15 = findViewById(R.id.rowview15);
+//
+//            stackMony1 = findViewById(R.id.stackMony1);
+//            stackMony2 = findViewById(R.id.stackMony2);
+//            stackMony3 = findViewById(R.id.stackMony3);
+//
+//
+//            if (F10.toString() == "") {
+//
+//                Rtilte.setText(getString(R.string.net_Info1));
+//                stackMony1.setText(getString(R.string.net_Info2));
+//                stackMony2.setText(getString(R.string.net_Info3));
+//
+//            } else {
+//
+//                //추첨일
+//                String F10_1 = F10.toString().replaceAll("\\<.*?>", "");
+//                F10_1 = F10_1.replaceAll("\n", "");
+//                F10_1 = F10_1.replaceAll(" ", "");
+//                Log.d("=====", "======Error======" + F10_1);
+//                Log.d("=====", "======Error======" + F10);
+//
+//                //쌍색구 번호
+//                String F11_1 = F11.toString().replaceAll("\\<.*?>", "");
+//                F11_1 = F11_1.replaceAll(" ", "");
+//
+//
+//                String[] aF11_1 = F11_1.split("\n");
+//
+//                //당첨 정보
+//                String F12_1 = F13.toString().replaceAll("\\<.*?>", "");
+//                String[] aF12_1 = F12_1.split("\n");
+//
+//                Log.d("==============", Arrays.toString(aF12_1));
+//
+//                // 당첨 누적액
+//                String nowsell_mony = F14.replaceAll("\\<.*?>", "");
+//                String next1won = F15.replaceAll("\\<.*?>", "");
+//                F16 = F16.replaceAll("\\<.*?>", "");
+//                //Impresion
+//
+//                LotDate = F10_1;
+//                Rtilte.setText(F10_1);
+//
+//                //당첨번호 표시
+//                Rtext1.setBackgroundResource(R.drawable.ball3);
+//                Rtext2.setBackgroundResource(R.drawable.ball3);
+//                Rtext3.setBackgroundResource(R.drawable.ball3);
+//                Rtext4.setBackgroundResource(R.drawable.ball3);
+//                Rtext5.setBackgroundResource(R.drawable.ball3);
+//                Rtext6.setBackgroundResource(R.drawable.ball3);
+//                Rtext8.setBackgroundResource(R.drawable.ball2);
+//
+//                Rtext1.setText(String.valueOf(aF11_1[1]));
+//                Rtext2.setText(String.valueOf(aF11_1[2]));
+//                Rtext3.setText(String.valueOf(aF11_1[3]));
+//                Rtext4.setText(String.valueOf(aF11_1[4]));
+//                Rtext5.setText(String.valueOf(aF11_1[5]));
+//                Rtext6.setText(String.valueOf(aF11_1[6]));
+//                Rtext7.setText("+");
+//                Rtext8.setText(String.valueOf(aF11_1[7]));
+//
+//                SUM_lotto_num = aF11_1[1] + " ," +
+//                        aF11_1[2] + " ," +
+//                        aF11_1[3] + " ," +
+//                        aF11_1[4] + " ," +
+//                        aF11_1[5] + " ," +
+//                        aF11_1[6] + "   (" +
+//                        aF11_1[7] + ")";
+//
+//                // 로또넘버 맞추기 위해서 모델로 셋
+//                Model.setWeeknum(aF11_1);
+//                // 당첨된 번호 랜덤 번호 생성 부분에 표시
+//                Balltxt1.setText(String.valueOf(aF11_1[1]));
+//                Balltxt2.setText(String.valueOf(aF11_1[2]));
+//                Balltxt3.setText(String.valueOf(aF11_1[3]));
+//                Balltxt4.setText(String.valueOf(aF11_1[4]));
+//                Balltxt5.setText(String.valueOf(aF11_1[5]));
+//                Balltxt6.setText(String.valueOf(aF11_1[6]));
+//                Balltxt7.setText(String.valueOf(aF11_1[7]));
+//
+//                rowview1.setText(aF12_1[0]);
+//                rowview2.setText(aF12_1[1]);
+//                rowview3.setText(aF12_1[2]);
+//                rowview4.setText(aF12_1[3]);
+//                rowview5.setText(aF12_1[4]);
+//                rowview6.setText(aF12_1[5]);
+//                rowview7.setText(aF12_1[6]);
+//                rowview8.setText(aF12_1[7]);
+//                rowview9.setText(aF12_1[8]);
+//                rowview10.setText(aF12_1[9]);
+//                rowview11.setText(aF12_1[10]);
+//                rowview12.setText(aF12_1[11]);
+//                rowview13.setText(aF12_1[12]);
+//                rowview14.setText(aF12_1[13]);
+//                rowview15.setText(aF12_1[14]);
+//
+//                stackMony1.setText("本期销售额 ：" + nowsell_mony + "元");
+//                stackMony2.setText("下期一等奖奖池累计金额 ：" + next1won + "元");
+//                stackMony3.setText("一等奖中出情况 ：" + F16);
+//            }
+//
+//        }
+//
+//    }
 
 
     @Override
     protected void onStart() {
         super.onStart();
+
+        Jsoup_Lotto jsoup_lotto = new Jsoup_Lotto(this);
+        jsoup_lotto.execute();
+
     }
+
 
 }

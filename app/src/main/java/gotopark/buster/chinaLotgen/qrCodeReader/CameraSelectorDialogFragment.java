@@ -4,12 +4,13 @@ package gotopark.buster.chinaLotgen.qrCodeReader;
  * Created by Gold on 2017. 3. 28..
  */
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 
 import org.jetbrains.annotations.NotNull;
 

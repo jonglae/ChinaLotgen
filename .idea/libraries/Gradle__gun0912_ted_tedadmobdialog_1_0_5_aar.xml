@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: gun0912.ted:tedadmobdialog:1.0.5@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef16cdd2517dc960ad68ecd04c3b81f8/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0f25bc2c42ad010a8ffd989cd25e4014/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef16cdd2517dc960ad68ecd04c3b81f8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ef16cdd2517dc960ad68ecd04c3b81f8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0f25bc2c42ad010a8ffd989cd25e4014/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0f25bc2c42ad010a8ffd989cd25e4014/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

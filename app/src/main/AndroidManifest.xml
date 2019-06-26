@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
 
         <activity android:name=".Main2Activity" />
@@ -54,6 +54,7 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5187489598351901~6344213310" />
+
     </application>
 
 </manifest>

@@ -6,15 +6,16 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -29,7 +30,8 @@ import gotopark.buster.chinaLotgen.database.DatabaseHelper;
 import gotopark.buster.chinaLotgen.listview.Card;
 import gotopark.buster.chinaLotgen.listview.OneCardAdapter;
 
-import static gotopark.buster.chinaLotgen.R.*;
+import static gotopark.buster.chinaLotgen.R.array;
+import static gotopark.buster.chinaLotgen.R.id;
 
 
 /**

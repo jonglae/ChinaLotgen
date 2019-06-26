@@ -1,8 +1,5 @@
 package antest.lotto_test.arraycompare;
 
-import android.support.constraint.solver.widgets.ConstraintWidgetGroup;
-import android.util.Log;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;

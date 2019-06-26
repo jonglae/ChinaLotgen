@@ -1,15 +1,17 @@
 package gotopark.buster.chinaLotgen;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.ads.AdListener;
+
 import java.util.Random;
 
 import gun0912.ted.tedadmobdialog.TedAdmobDialog;
@@ -24,7 +26,7 @@ class BackProcessHandler {
     @SuppressLint("StaticFieldLeak")
     private static MainActivity activity;
 
-    BackProcessHandler(Activity context) {
+    BackProcessHandler(AppCompatActivity context) {
         activity = (MainActivity) context;
     }
 

@@ -1,15 +1,15 @@
 package gotopark.buster.chinaLotgen
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.os.AsyncTask
+import androidx.appcompat.app.AppCompatActivity
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
 import java.io.IOException
 
 @SuppressLint("StaticFieldLeak")
 // 메인 엑티비티 텍스트 표시 접근
-class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
+class Jsoup_Lotto(context: AppCompatActivity) : AsyncTask<Void, Void?, Void?>() {
     // 메인 엑티비티 텍스트 표시 접근
     companion object {
 

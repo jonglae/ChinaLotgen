@@ -1,11 +1,8 @@
 <resources>
     <string name="app_name">中国双色球</string>
-    <string name="action_settings">Settings</string>
 
     <string name="info_net1">!发生了沟通问题!</string>
     <string name="info_net2">!我的网络通讯有问题!</string>
-    <string name="info_net3">检查您的WiFi或移动网络!!</string>
-    <string name="info_net4">请激活您的网络以验证您的彩票号码。!</string>
 
     <string name="btn_gen">点击按钮(Click)</string>
     <string name="btn_copy">复制</string>
@@ -15,14 +12,9 @@
     <string name="btn_list">名单</string>
     <string name="Main_text">单击“创建”按钮</string>
     <string name="main_mdct">MDCT</string>
-    <string name="lstbtn1">确认投票</string>
-    <string name="scr_Plus">+</string>
-    <string name="scr_text1">❤ 好运的数量 ❤</string>
     <string name="scr_text2">❤ 恭喜发财！❤</string>
     <string name="sw1_text1">总体/平均</string>
     <string name="sw2_text2">单击/接连</string>
-    <string name="Popup_Mesg1">恭喜发财~ 你想要退出吗？</string>
-    <string name="Popup_Mesg2">您可以通过按住来删除该号码.</string>
 
 
     <string name="banner_ad_unit_id">ca-app-pub-5187489598351901/1886093556</string>
@@ -36,7 +28,6 @@
     <string name="app_share">★#好运 #双色球★\n</string>
     <string name="app_Das">梦想成真.</string>
     <string name="info_Mess">恭喜发财 ★梦想成真★</string>
-    <string name="JsoupOne">"http://www.cwl.gov.cn/kjxx/ssq/"</string>
 
 
     //QR Code 카메라 관련
@@ -52,45 +43,27 @@
     <string name="scan_Meg1">请将绿色框设置为QR码 \n 你不能这么近。</string>
     <string name="scan_Meg2">祝贺获胜。</string>
 
-    <bool name="cameraPreviewShouldFillView">true</bool>
-
     //회차
-    <string name="jsoup_q1">.kjrq</string>
     //로또번호
-    <string name="jsoup_q2">.hmj</string>
     //보너스 번호
-    <string name="jsoup_q3">.qiuL</string>
     //당첨이력
-    <string name="jsoup_q4">.bqxq td</string>
 
     //本期销售额： 현재 판매액 :
-    <string name="jsoup_q5">.xqzy .xse</string>
     // 下期一等奖奖池累计金额： 다음 상금 1 등상
-    <string name="jsoup_q6">.xqzy .jchi</string>
-    <string name="jsoup_q7">.ydjzc</string>
 
 
     //network Error Message
-    <string name="net_Info1">Network Error!</string>
-    <string name="net_Info2">Please Turn ON Wifi or Mobile</string>
-    <string name="net_Info3">Need Network</string>
-    <string name="net_Info4">您可以通过重新启动应用程序来查看中奖号码。</string>
     <string name="twiter_CH">#幽默 #lotto #乐透 #韩元 #参考编号 @data114</string>
 
     <string name="scr_EXIT_Mesg1">你想要退出吗？ ?</string>
     <string name="scr_EXIT_Mesg2">EXIT后显示AD</string>
     <string name="scr_EXIT_Mesg3">出口</string>
-    <string name="select_list">您可以通过按住来删除该号码</string>
 
 
     //Note String
-    <string name="activity_title_home">Notes</string>
     //저장한 번호가 없다.
     <string name="msg_no_notes">没有保存的号码。</string>
     <string name="lbl_new_note_title">New Note</string>
-    <string name="lbl_edit_note_title">Edit Note</string>
     <string name="hint_enter_note">Enter your note!</string>
-
-    <string name="op_log">Operation Log: \n</string>
 
 </resources>
